@@ -2,20 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Define the custom Poppins font */
+@font-face {
+    font-family: 'Poppins'; 
+    src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: normal;  
+    font-style: normal;   
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
+  /* Apply the custom font globally */
+  body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  }
