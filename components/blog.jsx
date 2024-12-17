@@ -18,7 +18,7 @@ export default function NewArrivals() {
   
             {/* Button */}
             <div className="flex items-center space-x-3">
-            <a href="/blogs" class="bg-gray-300 px-6 py-2 rounded-full text-gray-800 font-semibold hover:bg-gray-400 transition">
+            <a href="/blogs" className="bg-gray-300 px-6 py-2 rounded-full text-gray-800 font-semibold hover:bg-gray-400 transition">
   Read more
 </a>
 

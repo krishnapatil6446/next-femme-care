@@ -50,19 +50,21 @@ export default function BookAppointment() {
                 Select a Service
               </label>
               <select
-                id="service"
-                name="service"
-                className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none hover:shadow-md transition-all duration-300"
-                required
-              >
-                <option value="" disabled selected>
-                  Choose a service
-                </option>
-                <option value="facial">Facial</option>
-                <option value="haircare">Haircare</option>
-                <option value="acne-treatment">Acne Treatment</option>
-                <option value="anti-aging">Anti-Aging</option>
-              </select>
+  id="service"
+  name="service"
+  defaultValue="" // Set the default value here
+  className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none hover:shadow-md transition-all duration-300"
+  required
+>
+  <option value="" disabled>
+    Choose a service
+  </option>
+  <option value="facial">Facial</option>
+  <option value="haircare">Haircare</option>
+  <option value="acne-treatment">Acne Treatment</option>
+  <option value="anti-aging">Anti-Aging</option>
+</select>
+
             </div>
 
             {/* Time Input */}
