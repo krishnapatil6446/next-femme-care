@@ -2,15 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Font Awesome */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 /* Define the custom Poppins font */
 @font-face {
     font-family: 'Poppins'; 
-    src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;  
     font-style: normal;   
-  }
+}
   
-  /* Apply the custom font globally */
-  body {
+/* Apply the custom font globally */
+body {
     font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+@layer components {
+  .btn-primary {
+    @apply bg-[#BF6159] text-white font-medium py-2 px-4 rounded-lg hover:bg-[#bf4e45] transition;
   }
+
+  .section-header {
+    @apply text-center mb-12;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-[#BF6159];
+  }
+
+  .section-subtitle {
+    @apply text-gray-600 mt-2;
+  }
+
+  .card-container {
+    @apply bg-[#FDE6D5] rounded-lg shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 p-6 text-center;
+  }
+
+  .card-title {
+    @apply text-xl font-semibold text-[#BF6159] mb-3;
+  }
+
+  .card-description {
+    @apply text-gray-700 text-sm mb-4;
+  }
+}
+
+/* Glow text effect */
+
+
+/* Shimmer effect */
+.shimmer-effect {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); opacity: 0.1; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0.1; }
+}

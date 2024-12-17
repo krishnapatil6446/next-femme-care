@@ -38,3 +38,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+EMAIL=your-email@gmail.com
+PASSWORD=your-email-password
+RECEIVER_EMAIL=recipient-email@gmail.com
+PORT=5000
