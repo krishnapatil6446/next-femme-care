@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Services() {
   const services = [
     {
-      image: '/facial-treatments.jpg',
+      image: '/images/home/services/facial.jpg',
       title: 'Facial Treatments',
       items: [
         'Anti-aging facials to smooth out wrinkles and fine lines',
@@ -14,7 +14,7 @@ export default function Services() {
       ],
     },
     {
-      image: '/laser-therapy.jpg',
+      image: '/images/home/services/laser.jpg',
       title: 'Laser & Light Therapy',
       items: [
         'IPL (Intense Pulsed Light) for skin rejuvenation and glow',
@@ -23,7 +23,7 @@ export default function Services() {
       ],
     },
     {
-      image: '/body-treatments.jpg',
+      image: '/images/home/services/body.jpg',
       title: 'Body Treatments',
       items: [
         'Body contouring to help you feel more confident in your skin',
@@ -32,7 +32,7 @@ export default function Services() {
       ],
     },
     {
-      image: '/hair-removal.jpg',
+      image: '/images/home/services/iStock-1353459858.jpg',
       title: 'Hair Removal',
       items: [
         'Gentle yet effective laser hair removal',

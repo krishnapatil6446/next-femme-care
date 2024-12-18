@@ -9,7 +9,7 @@ export default function About() {
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-500 ease-in-out">
               <Image
-                src="/hemkanti-logo.jpg"
+                src="/images/home/about.jpg"
                 alt="Hemkanti Clinic"
                 layout="fill"
                 objectFit="cover"

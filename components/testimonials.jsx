@@ -85,14 +85,14 @@ export default function FaqTestimonials() {
                 key={testimonial.id}
                 className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="mb-4">
-                  <Image
-                    src="/quote-icon.png"
-                    alt="Quote"
-                    width={40}
-                    height={40}
-                  />
-                </div>
+             <div className="mb-4 text-center">
+  <img 
+    src="/images/quote.png" 
+    alt="Quote Icon" 
+    className="img-fluid" 
+    style={{ width: '40px', height: '40px' }} 
+  />
+</div>
                 <p className="text-gray-600 italic leading-relaxed">
                   "{testimonial.text}"
                 </p>

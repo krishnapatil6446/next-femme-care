@@ -44,7 +44,7 @@ export default function NewArrivals() {
           {/* Right Image */}
           <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
             <img
-              src="https://via.placeholder.com/300" // Replace with actual image URL
+              src="/images/home/Gemini_Generated_Image_a09drda09drda09d-removebg-preview.jpg" // Replace with actual image URL
               alt="Hyaluronic Acid"
               className="rounded-lg shadow-md w-full max-w-sm object-cover"
             />
