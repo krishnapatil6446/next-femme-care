@@ -19,6 +19,18 @@ const FloatingButtonWithModal = () => {
     if (storedData) {
       setFormData(storedData);
     }
+
+    // Periodic "pulse" animation trigger
+    const pulseInterval = setInterval(() => {
+      // Trigger the "pulse" effect every 3 seconds
+      document.getElementById('floating-btn').classList.add('pulse');
+      setTimeout(() => {
+        document.getElementById('floating-btn').classList.remove('pulse');
+      }, 800); // Duration of pulse animation
+    }, 3000); // Pulse every 3 seconds
+
+    // Clear interval on cleanup
+    return () => clearInterval(pulseInterval);
   }, []);
 
   const handleInputChange = (e) => {
@@ -44,6 +56,7 @@ const FloatingButtonWithModal = () => {
     <div className="relative">
       {/* Floating Button */}
       <button
+        id="floating-btn"
         onClick={toggleModal}
         className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-full shadow-lg hover:from-blue-600 hover:to-blue-700 transform transition-all duration-300 ease-in-out hover:scale-105 z-50 group flex items-center gap-2"
       >
@@ -88,6 +101,25 @@ const FloatingButtonWithModal = () => {
       )}
 
       <style jsx>{`
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.1);
+            opacity: 0.8;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+        
+        .pulse {
+          animation: pulse 0.8s ease-in-out infinite;
+        }
+        
         @keyframes modalOpen {
           from {
             opacity: 0;
