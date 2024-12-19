@@ -4,18 +4,51 @@ import Image from "next/image";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Your message has been sent!");
-    setForm({ name: "", email: "", message: "" });
+    setResponseMessage("");
+    
+    if (!form.name || !form.email || !form.message) {
+      setResponseMessage("Please fill out all fields.");
+      return;
+    }
+  
+    if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+      setResponseMessage("Please enter a valid email address.");
+      return;
+    }
+  
+    setIsSubmitting(true);
+  
+    try {
+      const res = await fetch('/api/contactus', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+  
+      if (res.ok) {
+        setResponseMessage("Your message has been sent successfully!");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        const errorData = await res.json();
+        setResponseMessage(errorData.message || "Something went wrong!");
+      }
+    } catch (error) {
+      setResponseMessage("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
+  
   return (
     <section className="bg-[#FDE6D5] py-16 px-4 lg:px-16">
       <div className="container mx-auto">
@@ -82,11 +115,19 @@ const Contact = () => {
               <button
                 type="submit"
                 className="w-full bg-[#BF6159] text-white font-bold py-3 rounded-lg shadow-md hover:bg-[#A4504F] transition duration-300"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
+
+            {responseMessage && (
+              <div className="mt-4 text-center text-lg text-gray-800">
+                {responseMessage}
+              </div>
+            )}
           </div>
+
 
           {/* Contact Details */}
           <div className="flex flex-col justify-center items-center">

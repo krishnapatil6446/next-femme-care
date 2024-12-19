@@ -85,7 +85,7 @@ export default function Services() {
         </div>
         {/* Add "View All Services" Button */}
         <div className="text-center mt-12">
-          <Link href="/all-services"
+          <Link href="/services"
          className="inline-block px-6 py-3 text-lg font-medium text-white bg-[#8D6E63] rounded-full shadow-md hover:bg-[#6D4C41] transition duration-300">
               View All Services
           

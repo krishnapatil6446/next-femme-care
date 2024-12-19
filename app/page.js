@@ -49,8 +49,7 @@ function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <div className="relative w-full h-screen overflow-hidden">
-        {slides.map((slide, index) => (
+      <div className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 4rem)' }}>        {slides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
@@ -76,11 +75,12 @@ function Home() {
                   {slide.description}
                 </p>
                 <button
-                  onClick={() => console.log("Book Appointment")}
-                  className="bg-[#6D4C41] hover:bg-[#8D6E63] text-white px-8 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
-                >
-                  Book Appointment
-                </button>
+  onClick={() => document.getElementById("bookAppointmentForm").scrollIntoView({ behavior: "smooth" })}
+  className="bg-[#6D4C41] hover:bg-[#8D6E63] text-white px-8 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
+>
+  Book Appointment
+</button>
+
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@ function Home() {
         </p>
       </div>
       {/* Content Sections */}
-      <div className="space-y-20 ">
+      <div className=" ">
         <div className="animate-fade-up">
           <About />
         </div>
@@ -141,7 +141,8 @@ function Home() {
         <div className="animate-fade-up delay-600">
           <FaqTestimonials />
         </div>
-        <div className="animate-fade-up delay-800">
+        <div id="bookAppointmentForm"
+         className="animate-fade-up delay-800">
           <BookAppointment />
         </div>
         <div className="animate-fade-up delay-1000">
