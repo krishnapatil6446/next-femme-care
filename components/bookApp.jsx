@@ -1,40 +1,128 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import servicesData from '../components/services-data.json';
 
 export default function BookAppointment({ formData, handleInputChange, closeModal }) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [localFormData, setLocalFormData] = useState(formData);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    // Retrieve saved form data from localStorage
+    const savedFormData = localStorage.getItem('appointmentFormData');
+    if (savedFormData) {
+      try {
+        const parsedData = JSON.parse(savedFormData);
+        setLocalFormData(parsedData);
+      } catch (error) {
+        console.error("Error parsing saved form data:", error);
+        setLocalFormData(formData); // Fallback
+      }
+    }
+
+    // Set categories from services data
+    setCategories(Object.entries(servicesData.categories || {}));
+  }, [formData]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Find the name of the category or service based on the selected ID
+    const categoryName = categories.find(([name, _]) => name === localFormData.category)?.[0];
+    const serviceName = localFormData.service ? servicesData.categories[categoryName]?.services.find((service) => service.id === localFormData.service)?.name : null;
+
+    // Validate form inputs
+    if (!validatePhone(localFormData.phone)) {
+      setMessage({ text: 'Please enter a valid phone number.', type: 'error' });
+      return;
+    }
+
+    if (!validateEmail(localFormData.email)) {
+      setMessage({ text: 'Please enter a valid email address.', type: 'error' });
+      return;
+    }
+
+    if (new Date(localFormData.date) < new Date()) {
+      setMessage({ text: 'Please select a future date.', type: 'error' });
+      return;
+    }
+
+    if (!localFormData.time) {
+      setMessage({ text: 'Please select a time.', type: 'error' });
+      return;
+    }
+
+    // Ensure category is selected
+    if (!localFormData.category) {
+      setMessage({ text: 'Please select a category.', type: 'error' });
+      return;
+    }
+
+    // Ensure all required fields are filled out
+    const requiredFields = ['name', 'email', 'phone', 'date', 'time', 'category'];
+    for (const field of requiredFields) {
+      if (!localFormData[field]) {
+        setMessage({ text: `Please fill out the ${field}.`, type: 'error' });
+        return;
+      }
+    }
+
     setLoading(true);
 
-    const formObject = { ...formData };
-
     try {
+      console.log(localFormData); // Check data structure
+
+      // Replace category ID with category name and service ID with service name
+      const appointmentData = {
+        ...localFormData,
+        category: categoryName, // Use the category name
+        service: serviceName, // Use the service name if available
+      };
+
       const response = await fetch('/api/book_appointment', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formObject),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(appointmentData),
       });
+
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        console.error('Error Response:', errorResponse);
+        throw new Error(`Server error: ${response.status} ${response.statusText}`);
+      }
 
       const result = await response.json();
 
       if (result.success) {
-        setMessage('Your appointment has been booked successfully!');
-        closeModal();  // Close the modal after successful submission
-        localStorage.removeItem('appointmentFormData'); // Clear localStorage after successful form submission
+        setMessage({ text: 'Your appointment has been booked successfully!', type: 'success' });
+        setTimeout(() => {
+          closeModal();
+          localStorage.removeItem('appointmentFormData');
+        }, 5000);
       } else {
-        setMessage('There was an error. Please try again.');
+        setMessage({ text: result.message || 'There was an error. Please try again.', type: 'error' });
       }
     } catch (error) {
       console.error('Error:', error);
-      setMessage('Something went wrong. Please try again.');
+      setMessage({ text: `Something went wrong: ${error.message || 'Please try again.'}`, type: 'error' });
     } finally {
       setLoading(false);
     }
+  };
+
+  const validatePhone = (phone) => /^[0-9]{10}$/.test(phone);
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailRegex.test(email);
+  };
+
+  const handleInputChangeLocal = (e) => {
+    const { name, value } = e.target;
+    setLocalFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   return (
@@ -52,87 +140,93 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
 
         <div className="p-8 space-y-6">
           <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Input Fields */}
             {[
-              { id: "name", label: "Your Name", type: "text", placeholder: "Enter your name" },
-              { id: "email", label: "Email Address", type: "email", placeholder: "Enter your email" },
-              { id: "phone", label: "Phone Number", type: "tel", placeholder: "Enter your phone number" },
-              { id: "date", label: "Preferred Date", type: "date", placeholder: "Enter your preferred date" },
+              { id: 'name', label: 'Your Name', type: 'text', placeholder: 'Enter your name' },
+              { id: 'email', label: 'Email Address', type: 'email', placeholder: 'Enter your email' },
+              { id: 'phone', label: 'Phone Number', type: 'tel', placeholder: 'Enter your phone number' },
+              { id: 'date', label: 'Preferred Date', type: 'date', placeholder: 'Enter your preferred date' },
+              { id: 'time', label: 'Preferred Time', type: 'time', placeholder: 'Select a time' },
             ].map(({ id, label, type, placeholder }) => (
               <div key={id}>
-                <label htmlFor={id} className="block text-sm font-medium text-gray-700">
-                  {label}
-                </label>
+                <label htmlFor={id} className="block text-sm font-medium text-gray-700">{label}</label>
                 <input
                   type={type}
                   id={id}
                   name={id}
-                  value={formData[id]}
+                  value={localFormData[id] || ''}
                   placeholder={placeholder}
-                  onChange={handleInputChange}
+                  onChange={handleInputChangeLocal}
                   className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 placeholder-gray-500 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none transition-all duration-300 hover:shadow-md"
                   required
                 />
               </div>
             ))}
 
-            {/* Service Dropdown */}
             <div>
-              <label htmlFor="service" className="block text-sm font-medium text-gray-700">
-                Select a Service
-              </label>
+              <label htmlFor="category" className="block text-sm font-medium text-gray-700">Select a Category</label>
               <select
-                id="service"
-                name="service"
-                value={formData.service}
-                onChange={handleInputChange}
+                id="category"
+                name="category"
+                value={localFormData.category || ''}
+                onChange={handleInputChangeLocal}
                 className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none hover:shadow-md transition-all duration-300"
                 required
               >
-                <option value="" disabled>
-                  Choose a service
-                </option>
-                <option value="facial">Facial</option>
-                <option value="haircare">Haircare</option>
-                <option value="acne-treatment">Acne Treatment</option>
-                <option value="anti-aging">Anti-Aging</option>
+                <option value="" disabled>Choose a category</option>
+                {categories.map(([categoryName, categoryData]) => (
+                  <option key={categoryName} value={categoryName}>
+                    {categoryData.icon} {categoryName}
+                  </option>
+                ))}
               </select>
             </div>
 
-            {/* Time Input */}
-            <div>
-              <label htmlFor="time" className="block text-sm font-medium text-gray-700">
-                Preferred Time
-              </label>
-              <input
-                type="time"
-                id="time"
-                name="time"
-                value={formData.time}
-                onChange={handleInputChange}
-                className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none hover:shadow-md transition-all duration-300"
-                required
-              />
-            </div>
+            {localFormData.category && categories.length > 0 && (
+              <div className="mt-4">
+                <h3 className="text-xl font-bold">Services in {localFormData.category}</h3>
+                {categories
+                  .filter(([categoryName]) => categoryName === localFormData.category)
+                  .map(([categoryName, categoryData]) => (
+                    <div key={categoryName}>
+                      {categoryData.services.length === 0 ? (
+                        <p>No services available in this category.</p>
+                      ) : (
+                        categoryData.services.map((service) => (
+                          <div key={service.id} className="space-x-2">
+                            <input
+                              type="radio"
+                              id={service.id}
+                              name="service"
+                              value={service.id}
+                              checked={localFormData.service === service.id}
+                              onChange={handleInputChangeLocal}
+                              className="mr-2"
+                            />
+                            <label htmlFor={service.id}>{service.name}</label>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  ))}
+              </div>
+            )}
 
-            <div className="h-px bg-gray-200"></div>
-
-            {/* Submit Button */}
-            <div className="text-center">
+            <div className="flex justify-center mt-8">
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#FF7043] text-white py-3 px-6 rounded-md text-lg font-medium tracking-wide transition-all duration-300 hover:bg-[#FF5722] disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="bg-[#FF7043] text-white px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-[#FF5722] focus:outline-none"
               >
-                {loading ? 'Submitting...' : 'Submit Appointment'}
+                {loading ? 'Booking...' : 'Book Now'}
               </button>
             </div>
 
-            {/* Message */}
             {message && (
-              <div className={`text-center mt-4 ${message.includes('error') ? 'text-red-500' : 'text-green-500'}`}>
-                {message}
-              </div>
+              <p
+                className={`mt-4 text-lg font-semibold ${message.type === 'success' ? 'text-green-500' : message.type === 'error' ? 'text-red-500' : 'text-blue-500'}`}
+              >
+                {message.text}
+              </p>
             )}
           </form>
         </div>

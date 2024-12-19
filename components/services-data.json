@@ -1,0 +1,496 @@
+{
+    "categories": {
+      "Cosmetology": {
+        "icon": "💅",
+        "description": "Professional beauty treatments",
+        "services": [
+          {
+            "id": "cos-1",
+            "name": "Service A",
+            "icon": "💄",
+            "description": "Enhance your natural beauty with our premium service.",
+            "longDescription": "Our signature beauty treatment combines the latest techniques with premium products to enhance your natural features.",
+            "badge": "Popular",
+            "rating": 4.8,
+            "price": 99,
+            "duration": "60 min",
+            "benefits": ["Natural look", "Long-lasting", "Premium products"],
+            "availableSlots": ["Morning", "Afternoon", "Evening"]
+          },
+          {
+            "id": "cos-2",
+            "name": "Service B",
+            "icon": "🧖‍♀️",
+            "description": "Relax and rejuvenate your skin.",
+            "longDescription": "A relaxing treatment that combines massage and skincare for ultimate rejuvenation.",
+            "rating": 4.6,
+            "price": 129,
+            "duration": "90 min",
+            "benefits": ["Deep relaxation", "Skin renewal", "Anti-aging"],
+            "availableSlots": ["Morning", "Afternoon"]
+          }
+        ]
+      },
+      
+        "Hair": {
+          "icon": "💇‍♀️",
+          "description": "Hair treatments for healthy, beautiful hair",
+          "services": [
+            {
+              "id": "hair-1",
+              "name": "Hair Coloring",
+              "icon": "🎨",
+              "description": "Enhance your hair with vibrant colors.",
+              "longDescription": "A variety of hair coloring options to give you the perfect shade and shine.",
+              "rating": 4.7,
+              "price": 199,
+              "duration": "60 min",
+              "benefits": ["Vibrant color", "Glossy finish", "Long-lasting"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "hair-2",
+              "name": "Hair Rebonding",
+              "icon": "🪞",
+              "description": "Straighten your hair with professional rebonding.",
+              "longDescription": "Get sleek, straight hair with our hair rebonding service using top-quality products.",
+              "rating": 4.8,
+              "price": 399,
+              "duration": "90 min",
+              "benefits": ["Sleek straight hair", "Frizz control", "Long-lasting results"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "hair-3",
+              "name": "Keratin Treatment",
+              "icon": "🧴",
+              "description": "Restore shine and smoothness with keratin.",
+              "longDescription": "Keratin treatment for soft, shiny, and smooth hair that reduces frizz and repairs damage.",
+              "rating": 4.9,
+              "price": 349,
+              "duration": "75 min",
+              "benefits": ["Frizz-free", "Healthy shine", "Silky smooth"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "hair-4",
+              "name": "Hair Spa",
+              "icon": "🛁",
+              "description": "Rejuvenate your scalp and hair with a luxurious spa treatment.",
+              "longDescription": "Hair spa therapy to nourish, hydrate, and revitalize your hair and scalp to restore its natural shine.",
+              "rating": 4.7,
+              "price": 299,
+              "duration": "60 min",
+              "benefits": ["Deep nourishment", "Shiny hair", "Healthy scalp"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "hair-5",
+              "name": "Dandruff Treatment",
+              "icon": "❄️",
+              "description": "Effective dandruff control solutions.",
+              "longDescription": "Specialized treatment for dandruff and scalp conditions to restore a healthy scalp.",
+              "rating": 4.6,
+              "price": 199,
+              "duration": "30 min",
+              "benefits": ["Dandruff control", "Scalp health", "Hydration"],
+              "availableSlots": ["Morning", "Afternoon"]
+            }
+          ]
+        },
+        "Laser": {
+          "icon": "🔦",
+          "description": "Advanced laser treatments for skin and hair",
+          "services": [
+            {
+              "id": "laser-1",
+              "name": "Laser Hair Reduction",
+              "icon": "💇‍♀️",
+              "description": "Permanent solution to unwanted hair.",
+              "longDescription": "Safe, effective, and permanent hair removal with advanced laser technology.",
+              "rating": 4.9,
+              "price": 299,
+              "duration": "30 min",
+              "benefits": ["Permanent results", "Minimal pain", "Quick recovery"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "laser-2",
+              "name": "Skin Brightening",
+              "icon": "🌟",
+              "description": "Brighten and even out your skin tone.",
+              "longDescription": "Laser skin treatment that lightens and evens out skin tone for a radiant complexion.",
+              "rating": 4.8,
+              "price": 349,
+              "duration": "45 min",
+              "benefits": ["Even skin tone", "Brightening", "Radiance"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "laser-3",
+              "name": "Tattoo Removal",
+              "icon": "🖋️",
+              "description": "Remove unwanted tattoos safely.",
+              "longDescription": "Laser technology to safely remove tattoos of all sizes and colors with minimal discomfort.",
+              "rating": 4.8,
+              "price": 399,
+              "duration": "60 min",
+              "benefits": ["Effective removal", "No scarring", "Quick recovery"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "laser-4",
+              "name": "Hyperpigmentation Treatment",
+              "icon": "🔴",
+              "description": "Treat and lighten hyperpigmented areas.",
+              "longDescription": "Laser therapy for the treatment of hyperpigmentation, including age spots and melasma.",
+              "rating": 4.9,
+              "price": 299,
+              "duration": "45 min",
+              "benefits": ["Skin lightening", "Even tone", "Safe treatment"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "laser-5",
+              "name": "Melasma Treatment",
+              "icon": "💡",
+              "description": "Laser treatment for melasma and skin discoloration.",
+              "longDescription": "Effective laser treatment to target melasma and other forms of skin discoloration.",
+              "rating": 4.8,
+              "price": 349,
+              "duration": "50 min",
+              "benefits": ["Skin rejuvenation", "Lighten discoloration", "Quick results"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "laser-6",
+              "name": "Birthmark Removal",
+              "icon": "❌",
+              "description": "Remove unwanted birthmarks with laser.",
+              "longDescription": "Advanced laser technology for safe and effective birthmark removal.",
+              "rating": 4.7,
+              "price": 299,
+              "duration": "45 min",
+              "benefits": ["Permanent removal", "No scarring", "Quick recovery"],
+              "availableSlots": ["Morning", "Afternoon"]
+            }
+          ]
+        },
+        "Medifacials": {
+          "icon": "💆",
+          "description": "Advanced facials for glowing and healthy skin",
+          "services": [
+            {
+              "id": "medifacial-1",
+              "name": "Hydrafacial",
+              "icon": "💧",
+              "description": "Deep cleanse and hydrate your skin.",
+              "longDescription": "A hydrating facial treatment that removes impurities and delivers essential nutrients to the skin.",
+              "rating": 4.9,
+              "price": 229,
+              "duration": "45 min",
+              "benefits": ["Deep hydration", "Skin rejuvenation", "Instant glow"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "medifacial-2",
+              "name": "Carbon Laser Facial",
+              "icon": "🖤",
+              "description": "Exfoliate and brighten with carbon-based treatment.",
+              "longDescription": "A carbon laser facial for deep exfoliation, brightening, and improving skin texture.",
+              "rating": 4.8,
+              "price": 299,
+              "duration": "60 min",
+              "benefits": ["Exfoliation", "Brightening", "Anti-aging"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "medifacial-3",
+              "name": "Vampire Facial",
+              "icon": "🩸",
+              "description": "Enhance skin regeneration with your own platelets.",
+              "longDescription": "A cutting-edge facial treatment that uses PRP (Platelet Rich Plasma) to rejuvenate the skin.",
+              "rating": 4.9,
+              "price": 399,
+              "duration": "75 min",
+              "benefits": ["Collagen stimulation", "Anti-aging", "Skin rejuvenation"],
+              "availableSlots": ["Morning", "Afternoon"]
+            },
+            {
+              "id": "medifacial-4",
+              "name": "Korean Glass Facial",
+              "icon": "💎",
+              "description": "Achieve the perfect glass skin look.",
+              "longDescription": "A luxurious facial designed to give you glowing, flawless skin with a glass-like finish.",
+              "rating": 4.9,
+              "price": 349,
+              "duration": "60 min",
+              "benefits": ["Smooth texture", "Radiant glow", "Flawless finish"],
+              "availableSlots": ["Morning", "Afternoon"]
+            }
+          ]
+        },
+     "Homeopathy": {
+    "icon": "🌿",
+    "description": "Natural remedies for a wide range of conditions",
+    "services": [
+      {
+        "id": "homeo-1",
+        "name": "Allergic Rhinitis",
+        "icon": "🤧",
+        "description": "Treat seasonal allergies and nasal inflammation.",
+        "longDescription": "Homeopathic remedies to relieve symptoms of allergic rhinitis like sneezing, nasal congestion, and runny nose.",
+        "rating": 4.8,
+        "price": 150,
+        "duration": "30 min",
+        "benefits": ["Natural treatment", "No side effects", "Quick relief"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-2",
+        "name": "Asthma",
+        "icon": "🌬️",
+        "description": "Manage asthma with homeopathic remedies.",
+        "longDescription": "Natural remedies for managing asthma symptoms and improving lung function.",
+        "rating": 4.7,
+        "price": 180,
+        "duration": "30 min",
+        "benefits": ["Asthma control", "Breathing ease", "Long-term relief"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-3",
+        "name": "Tonsilitis",
+        "icon": "😷",
+        "description": "Relieve tonsil inflammation with natural remedies.",
+        "longDescription": "Homeopathic treatments for managing the symptoms of tonsilitis and reducing inflammation.",
+        "rating": 4.6,
+        "price": 170,
+        "duration": "30 min",
+        "benefits": ["Sore throat relief", "Anti-inflammatory", "Natural healing"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-4",
+        "name": "Bronchitis",
+        "icon": "🌫️",
+        "description": "Treat bronchitis symptoms with homeopathic remedies.",
+        "longDescription": "Natural remedies to reduce inflammation, manage coughing, and promote better lung health.",
+        "rating": 4.7,
+        "price": 180,
+        "duration": "30 min",
+        "benefits": ["Reduced coughing", "Lung health", "Quick recovery"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-5",
+        "name": "Trigeminal Neuralgia",
+        "icon": "🧠",
+        "description": "Alleviate pain from trigeminal neuralgia.",
+        "longDescription": "Homeopathy for managing nerve pain associated with trigeminal neuralgia.",
+        "rating": 4.9,
+        "price": 200,
+        "duration": "30 min",
+        "benefits": ["Pain relief", "Nerve soothing", "Non-invasive treatment"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-6",
+        "name": "Migraine",
+        "icon": "💆‍♀️",
+        "description": "Natural relief for migraines and headache symptoms.",
+        "longDescription": "Homeopathic remedies to treat and prevent migraines, easing the severity and duration of headaches.",
+        "rating": 4.8,
+        "price": 190,
+        "duration": "30 min",
+        "benefits": ["Migraine relief", "Headache control", "Natural healing"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-7",
+        "name": "Acne",
+        "icon": "🌸",
+        "description": "Treat acne naturally and prevent breakouts.",
+        "longDescription": "Homeopathic remedies to clear acne and reduce inflammation, providing a smoother complexion.",
+        "rating": 4.7,
+        "price": 160,
+        "duration": "30 min",
+        "benefits": ["Acne control", "Clear skin", "Reduced inflammation"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-8",
+        "name": "Urticaria",
+        "icon": "🌿",
+        "description": "Relieve itching and rash from urticaria (hives).",
+        "longDescription": "Homeopathic solutions to soothe urticaria symptoms like itching, rash, and swelling.",
+        "rating": 4.6,
+        "price": 170,
+        "duration": "30 min",
+        "benefits": ["Itch relief", "Reduced rash", "Anti-inflammatory"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-9",
+        "name": "Eczema",
+        "icon": "🧴",
+        "description": "Treat eczema and skin irritation naturally.",
+        "longDescription": "Homeopathic treatments to reduce eczema flare-ups and soothe skin irritation.",
+        "rating": 4.8,
+        "price": 180,
+        "duration": "30 min",
+        "benefits": ["Skin soothing", "Reduced irritation", "Natural healing"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-10",
+        "name": "Psoriasis",
+        "icon": "🩹",
+        "description": "Manage psoriasis symptoms with homeopathy.",
+        "longDescription": "Homeopathic remedies to alleviate itching and scaling caused by psoriasis.",
+        "rating": 4.7,
+        "price": 190,
+        "duration": "30 min",
+        "benefits": ["Itch relief", "Scalping reduction", "Soothing"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-11",
+        "name": "Lichen Planus",
+        "icon": "🍃",
+        "description": "Relieve lichen planus symptoms naturally.",
+        "longDescription": "Natural remedies for treating the skin conditions and inflammation caused by lichen planus.",
+        "rating": 4.7,
+        "price": 200,
+        "duration": "30 min",
+        "benefits": ["Skin soothing", "Reduced inflammation", "Healing"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-12",
+        "name": "PCOS",
+        "icon": "🔴",
+        "description": "Manage PCOS symptoms with homeopathy.",
+        "longDescription": "Homeopathic treatments to balance hormones and alleviate the symptoms of polycystic ovary syndrome (PCOS).",
+        "rating": 4.8,
+        "price": 210,
+        "duration": "30 min",
+        "benefits": ["Hormonal balance", "Symptom relief", "Natural treatment"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-13",
+        "name": "Menstrual Complaints",
+        "icon": "🩸",
+        "description": "Treat menstrual issues naturally.",
+        "longDescription": "Homeopathic remedies for common menstrual issues like cramps, irregular cycles, and PMS.",
+        "rating": 4.7,
+        "price": 180,
+        "duration": "30 min",
+        "benefits": ["Pain relief", "Regular cycles", "Hormonal balance"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-14",
+        "name": "Arthritis",
+        "icon": "💪",
+        "description": "Reduce arthritis pain and inflammation.",
+        "longDescription": "Homeopathic treatments to reduce joint pain, stiffness, and inflammation caused by arthritis.",
+        "rating": 4.8,
+        "price": 190,
+        "duration": "30 min",
+        "benefits": ["Pain relief", "Reduced inflammation", "Joint flexibility"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-15",
+        "name": "Piles",
+        "icon": "🍑",
+        "description": "Alleviate piles symptoms naturally.",
+        "longDescription": "Homeopathic solutions to manage pain, swelling, and itching associated with piles (hemorrhoids).",
+        "rating": 4.6,
+        "price": 160,
+        "duration": "30 min",
+        "benefits": ["Pain relief", "Swelling reduction", "Natural healing"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-16",
+        "name": "Gastritis",
+        "icon": "🍴",
+        "description": "Treat gastritis symptoms naturally.",
+        "longDescription": "Homeopathic remedies to relieve the pain, bloating, and indigestion caused by gastritis.",
+        "rating": 4.7,
+        "price": 170,
+        "duration": "30 min",
+        "benefits": ["Digestive relief", "Reduced acidity", "Natural treatment"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-17",
+        "name": "IBS",
+        "icon": "💩",
+        "description": "Manage Irritable Bowel Syndrome (IBS) symptoms.",
+        "longDescription": "Homeopathic solutions to alleviate symptoms of IBS like bloating, diarrhea, and abdominal pain.",
+        "rating": 4.7,
+        "price": 180,
+        "duration": "30 min",
+        "benefits": ["Digestive comfort", "Reduced bloating", "Pain relief"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-18",
+        "name": "Renal Calculi",
+        "icon": "💎",
+        "description": "Manage kidney stones with homeopathy.",
+        "longDescription": "Homeopathic treatments to relieve pain and help in the passage of kidney stones.",
+        "rating": 4.8,
+        "price": 200,
+        "duration": "30 min",
+        "benefits": ["Pain relief", "Stone removal", "Kidney health"],
+        "availableSlots": ["Morning", "Afternoon"]
+      },
+      {
+        "id": "homeo-19",
+        "name": "Spondylitis",
+        "icon": "🦴",
+        "description": "Treat spondylitis and manage pain.",
+        "longDescription": "Homeopathic solutions to manage pain and inflammation caused by spondylitis, promoting better spine health.",
+        "rating": 4.7,
+        "price": 190,
+        "duration": "30 min",
+        "benefits": ["Pain relief", "Inflammation reduction", "Spinal health"],
+        "availableSlots": ["Morning", "Afternoon"]
+      }
+    ]
+  }
+
+    },
+    "timeSlots": {
+      "Morning": ["9:00 AM", "10:00 AM", "11:00 AM", "11:30 AM"],
+      "Afternoon": ["1:00 PM", "2:00 PM", "3:00 PM", "3:30 PM", "4:00 PM"],
+      "Evening": ["5:00 PM", "6:00 PM", "7:00 PM", "7:30 PM"]
+    },
+    "promocodes": [
+      {
+        "code": "NEWCLIENT",
+        "discount": 20,
+        "description": "20% off on your first visit"
+      },
+      {
+        "code": "WEEKEND",
+        "discount": 15,
+        "description": "15% off on weekend appointments"
+      },
+      {
+        "code": "BRIDAL2024",
+        "discount": 25,
+        "description": "25% off on bridal packages"
+      },
+      {
+        "code": "SUMMER",
+        "discount": 10,
+        "description": "10% off on all laser treatments"
+      }
+    ]
+  }

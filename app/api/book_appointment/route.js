@@ -1,8 +1,11 @@
+// app/api/book_appointment/route.js
+
 import nodemailer from 'nodemailer';
 
+// Handle POST request
 export async function POST(req) {
   try {
-    const { name, email, phone, service, time } = await req.json();
+    const { name, email, phone, service, time } = await req.json(); // Get the request body (use req.json() in Next.js 13)
 
     // Validate input fields
     if (!name || !email || !phone || !service || !time) {
@@ -49,7 +52,7 @@ export async function POST(req) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error sending email:', error.message);
     return new Response(
       JSON.stringify({ success: false, message: 'Failed to send email. Please try again.' }),
       { status: 500 }
