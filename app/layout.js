@@ -1,7 +1,9 @@
+
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
-import Loader from "../components/loader";
+import FloatingButton from "../components/FloatingButton";
+
 
 
 export const metadata = {
@@ -15,7 +17,10 @@ export default function RootLayout({ children }) {
       <body className="bg-slate-100"> 
       <Navbar/>
       {/* <Loader/> */}
+     
+
         {children}
+        <FloatingButton/>
         <Footer/>
       </body>
     </html>

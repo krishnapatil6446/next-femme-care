@@ -4,7 +4,7 @@ import About from "../components/about";
 import WhyChooseHemkanti from "../components/whychoose";
 import Services from "../components/services";
 import FaqTestimonials from "../components/testimonials";
-import BookAppointment from "../components/bookApp";
+import FloatingButtonWithModal from "../components/FloatingButton";
 import NewArrivals from "../components/blog";
 
 function Home() {
@@ -74,12 +74,12 @@ function Home() {
                 <p className="text-lg sm:text-2xl text-center mb-8 max-w-2xl animate-fade delay-200">
                   {slide.description}
                 </p>
-                <button
+                {/* <button
   onClick={() => document.getElementById("bookAppointmentForm").scrollIntoView({ behavior: "smooth" })}
   className="bg-[#6D4C41] hover:bg-[#8D6E63] text-white px-8 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
 >
   Book Appointment
-</button>
+</button> */}
 
               </div>
             </div>
@@ -141,12 +141,13 @@ function Home() {
         <div className="animate-fade-up delay-600">
           <FaqTestimonials />
         </div>
-        <div id="bookAppointmentForm"
+        {/* <div id="bookAppointmentForm"
          className="animate-fade-up delay-800">
           <BookAppointment />
-        </div>
+        </div> */}
         <div className="animate-fade-up delay-1000">
           <NewArrivals />
+        
         </div>
       </div>
     </div>

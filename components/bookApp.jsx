@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-export default function BookAppointment() {
+export default function BookAppointment({ formData, handleInputChange, closeModal }) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -9,12 +9,7 @@ export default function BookAppointment() {
 
     setLoading(true);
 
-    const formData = new FormData(e.target);
-    const formObject = {};
-
-    formData.forEach((value, key) => {
-      formObject[key] = value;
-    });
+    const formObject = { ...formData };
 
     try {
       const response = await fetch('/api/book_appointment', {
@@ -29,6 +24,8 @@ export default function BookAppointment() {
 
       if (result.success) {
         setMessage('Your appointment has been booked successfully!');
+        closeModal();  // Close the modal after successful submission
+        localStorage.removeItem('appointmentFormData'); // Clear localStorage after successful form submission
       } else {
         setMessage('There was an error. Please try again.');
       }
@@ -60,6 +57,7 @@ export default function BookAppointment() {
               { id: "name", label: "Your Name", type: "text", placeholder: "Enter your name" },
               { id: "email", label: "Email Address", type: "email", placeholder: "Enter your email" },
               { id: "phone", label: "Phone Number", type: "tel", placeholder: "Enter your phone number" },
+              { id: "date", label: "Preferred Date", type: "date", placeholder: "Enter your preferred date" },
             ].map(({ id, label, type, placeholder }) => (
               <div key={id}>
                 <label htmlFor={id} className="block text-sm font-medium text-gray-700">
@@ -69,7 +67,9 @@ export default function BookAppointment() {
                   type={type}
                   id={id}
                   name={id}
+                  value={formData[id]}
                   placeholder={placeholder}
+                  onChange={handleInputChange}
                   className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 placeholder-gray-500 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none transition-all duration-300 hover:shadow-md"
                   required
                 />
@@ -84,7 +84,8 @@ export default function BookAppointment() {
               <select
                 id="service"
                 name="service"
-                defaultValue=""
+                value={formData.service}
+                onChange={handleInputChange}
                 className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none hover:shadow-md transition-all duration-300"
                 required
               >
@@ -107,6 +108,8 @@ export default function BookAppointment() {
                 type="time"
                 id="time"
                 name="time"
+                value={formData.time}
+                onChange={handleInputChange}
                 className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none hover:shadow-md transition-all duration-300"
                 required
               />
@@ -119,18 +122,19 @@ export default function BookAppointment() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-[#FF7043] to-[#8D6E63] text-white py-3 px-6 rounded-lg font-bold text-lg hover:scale-105 transform transition-all duration-300 shadow-md hover:shadow-lg"
+                className="w-full bg-[#FF7043] text-white py-3 px-6 rounded-md text-lg font-medium tracking-wide transition-all duration-300 hover:bg-[#FF5722] disabled:bg-gray-300 disabled:cursor-not-allowed"
               >
-                {loading ? 'Booking...' : 'Book Now'}
+                {loading ? 'Submitting...' : 'Submit Appointment'}
               </button>
             </div>
-          </form>
 
-          {message && (
-            <div className="mt-6 text-center text-lg text-gray-700">
-              {message}
-            </div>
-          )}
+            {/* Message */}
+            {message && (
+              <div className={`text-center mt-4 ${message.includes('error') ? 'text-red-500' : 'text-green-500'}`}>
+                {message}
+              </div>
+            )}
+          </form>
         </div>
       </div>
     </section>
