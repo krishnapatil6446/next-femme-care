@@ -32,6 +32,12 @@ export default function WhyChooseHemkanti() {
         'Our clinic isn\'t just a place for treatments — it\'s a sanctuary. Come relax, unwind, and leave feeling refreshed, rejuvenated, and ready to take on the world.',
       icon: 'fa-spa',
     },
+     {
+      title: 'Comprehensive Follow-Up',
+      description:
+        'Our care doesn’t stop after your treatment. We provide thorough follow-up support and guidance to ensure long-lasting results and your complete satisfaction.',
+      icon: 'fa-calendar-check',
+    },
   ];
 
   return (

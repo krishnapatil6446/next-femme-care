@@ -31,13 +31,14 @@ const FloatingButtonWithModal = () => {
     <div className="relative">
       {/* Floating Button */}
       <button
-        id="floating-btn"
-        onClick={() => toggleModal(true)}
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-full shadow-lg hover:from-blue-600 hover:to-blue-700 transform transition-all duration-300 ease-in-out hover:scale-105 z-50 group flex items-center gap-2"
-      >
-        <Plus className="w-5 h-5" />
-        <span className="font-semibold">Book Appointment</span>
-      </button>
+  id="floating-btn"
+  onClick={() => toggleModal(true)}
+  className="fixed bottom-6 right-6 bg-gradient-to-r from-[#BF6159] to-[#A4504F] text-white py-4 px-8 rounded-full shadow-lg hover:from-[#A4504F] hover:to-[#8E3D3A] transform transition-all duration-300 ease-in-out hover:scale-105 z-50 group flex items-center gap-2"
+>
+  <Plus className="w-5 h-5" />
+  <span className="font-semibold">Book Appointment</span>
+</button>
+
 
       {/* Use the reusable modal component */}
       <BookAppointmentModal
