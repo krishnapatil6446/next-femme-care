@@ -75,10 +75,10 @@ const ServiceInterface = () => {
     filteredServices.map((service) => (
       <div
         key={service.id}
-        className="relative bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl border-t-4 border-[#FF7043] group"
+        className="relative bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl border-t-4 border-[#754737] group"
       >
         {service.badge && (
-          <span className="absolute top-2 right-2 bg-[#FF7043] text-white text-xs font-semibold py-1 px-2 rounded-full">
+          <span className="absolute top-2 right-2 bg-[#754737] text-white text-xs font-semibold py-1 px-2 rounded-full">
             {service.badge}
           </span>
         )}
@@ -87,18 +87,18 @@ const ServiceInterface = () => {
             onClick={() => toggleFavorite(service.id)}
             className="p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
           >
-            <Heart 
+            {/* <Heart 
               className={`w-4 h-4 ${favorites.includes(service.id) ? 'fill-red-500 text-red-500' : 'text-gray-400'}`}
-            />
+            /> */}
           </button>
-          <button className="p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors">
+          {/* <button className="p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors">
             <Share2 className="w-4 h-4 text-gray-400" />
-          </button>
+          </button> */}
         </div>
         
-        <div className="flex items-center justify-center mb-4 text-[#FF7043] text-6xl group-hover:scale-110 transition-transform duration-300">
+        {/* <div className="flex items-center justify-center mb-4 text-[#754737] text-6xl group-hover:scale-110 transition-transform duration-300">
           {service.icon}
-        </div>
+        </div> */}
         
         <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.name}</h3>
         <p className="text-sm text-gray-600 mb-4">{service.description}</p>
@@ -115,7 +115,7 @@ const ServiceInterface = () => {
         </div>
 
         <div className="flex flex-col gap-2 mb-4">
-          <div className="text-lg font-bold text-[#FF7043]">${service.price}</div>
+          <div className="text-lg font-bold text-[#754737]">₹{service.price}</div>
           <div className="flex flex-wrap gap-2">
             {service.benefits.map((benefit, index) => (
               <span 
@@ -133,7 +133,7 @@ const ServiceInterface = () => {
             setSelectedService(service);
             toggleModal(true); // Open modal on "Book Now" click
           }}
-          className="w-full px-4 py-2 bg-transparent border-2 border-[#FF7043] text-[#FF7043] rounded-full font-medium hover:bg-[#FF7043] hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 group"
+          className="w-full px-4 py-2 bg-transparent border-2 border-[#754737] text-[#754737] rounded-full font-medium hover:bg-[#754737] hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 group"
         >
           Book Now
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -144,16 +144,15 @@ const ServiceInterface = () => {
 
   return (
     <section className="bg-gradient-to-br from-[#FFF4ED] to-[#FFE7E1] py-16 min-h-screen">
-      Promo Banner
       {showPromo && (
-        <div className="fixed top-0 left-0 right-0 bg-[#FF7043] text-white py-2 px-4 text-center z-50">
+        // <div className="fixed top-0 left-0 right-0 bg-[#754737] text-white py-2 px-4 text-center z-50">
           <div className="container mx-auto flex justify-between items-center">
             <div className="flex-1" />
-            <p className="flex-1 text-center">Use code NEWCLIENT for 20% off your first service!</p>
-            <button onClick={() => setShowPromo(false)} className="flex-1 flex justify-end">
+            {/* <p className="flex-1 text-center">Use code NEWCLIENT for 20% off your first service!</p> */}
+            {/* <button onClick={() => setShowPromo(false)} className="flex-1 flex justify-end">
               <X className="w-4 h-4" />
-            </button>
-          </div>
+            </button> */}
+          {/* </div> */}
         </div>
       )}
 
@@ -161,9 +160,9 @@ const ServiceInterface = () => {
       <div className="text-center mb-16 max-w-4xl mx-auto px-4">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">
           Discover Your{" "}
-          <span className="text-[#FF7043] relative">
+          <span className="text-[#754737] relative">
             Glow
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#FF7043] opacity-20" />
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#754737] opacity-20" />
           </span>
         </h1>
         <p className="text-lg text-gray-600 mb-8">
@@ -182,7 +181,7 @@ const ServiceInterface = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               onFocus={() => setIsSearchFocused(true)}
               onBlur={() => setIsSearchFocused(false)}
-              className="w-full pl-12 pr-4 py-3 rounded-full border-2 border-gray-200 focus:border-[#FF7043] outline-none"
+              className="w-full pl-12 pr-4 py-3 rounded-full border-2 border-gray-200 focus:border-[#754737] outline-none"
             />
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
           </div>
@@ -254,7 +253,7 @@ const ServiceInterface = () => {
             onClick={() => setActiveTab(category)}
             className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
               activeTab === category
-                ? "bg-[#FF7043] text-white shadow-lg"
+                ? "bg-[#754737] text-white shadow-lg"
                 : "bg-white text-gray-600 hover:bg-gray-50"
             }`}
           >

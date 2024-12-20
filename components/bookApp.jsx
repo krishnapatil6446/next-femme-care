@@ -136,7 +136,7 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
           <p className="text-lg sm:text-xl opacity-90">Ready to Glow? Your Skin Journey Begins Here!</p>
         </div>
 
-        <div className="h-1 bg-gradient-to-r from-[#FFAB91] via-[#FF7043] to-[#8D6E63]"></div>
+        <div className="h-1 bg-gradient-to-r from-[#FFAB91] via-[#754737] to-[#8D6E63]"></div>
 
         <div className="p-8 space-y-6">
           <form onSubmit={handleSubmit} className="space-y-8">
@@ -156,7 +156,7 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
                   value={localFormData[id] || ''}
                   placeholder={placeholder}
                   onChange={handleInputChangeLocal}
-                  className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 placeholder-gray-500 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none transition-all duration-300 hover:shadow-md"
+                  className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 placeholder-gray-500 shadow-sm focus:ring-2 focus:ring-[#754737] focus:outline-none transition-all duration-300 hover:shadow-md"
                   required
                 />
               </div>
@@ -169,7 +169,7 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
                 name="category"
                 value={localFormData.category || ''}
                 onChange={handleInputChangeLocal}
-                className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#FF7043] focus:outline-none hover:shadow-md transition-all duration-300"
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#754737] focus:outline-none hover:shadow-md transition-all duration-300"
                 required
               >
                 <option value="" disabled>Choose a category</option>
@@ -215,7 +215,7 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-[#FF7043] text-white px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-[#FF5722] focus:outline-none"
+                className="bg-[#754737] text-white px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-[#FF5722] focus:outline-none"
               >
                 {loading ? 'Booking...' : 'Book Now'}
               </button>
