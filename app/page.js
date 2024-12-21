@@ -9,27 +9,28 @@ import NewArrivals from "../components/blog";
 
 function Home() {
   const slides = [
-    {
-      image: "/images/home/photo1.jpeg",
-      title: "Discover Your Natural Glow",
-      description: "Nourish your skin with our all-natural skincare products for a radiant look.",
-    },
-    {
-      image: "/images/home/photo2.jpeg",
-      title: "Revitalize & Rejuvenate",
-      description: "Pamper your skin with gentle care to keep it smooth and youthful.",
-    },
-    {
-      image: "/images/home/photo3.jpeg",
-      title: "Your Daily Skincare Routine",
-      description: "Simplify skincare with our curated routines for beautiful, healthy skin.",
-    },
-    {
-      image: "/images/home/photo4.jpeg",
-      title: "Exclusive Offers for You",
-      description: "Special skincare deals tailored just for you. Feel confident and glowing.",
-    },
-  ];
+      {
+        image: "/images/home/photo1.jpeg",
+        title: "Find Acne-Free and Fresh Radiance",
+        description: "Discover tailored prices and skincare treatments near you for a radiant look.",
+      },
+      {
+        image: "/images/home/photo2.jpeg",
+        title: "Feel Young and Refreshed",
+        description: "Explore aesthetic treatments and expert tips to rejuvenate your skin.",
+      },
+      {
+        image: "/images/home/photo3.jpeg",
+        title: "Trusted Skincare for All",
+        description: "Find the best and perfect products for all skin types to enhance your glow.",
+      },
+      {
+        image: "/images/home/photo4.jpeg",
+        title: "Ideal Prices for Natural Glow",
+        description: "Take advantage of special skincare deals and offers for beautiful and healthy skin.",
+      },
+    ];
+    
 
   const [current, setCurrent] = useState(0);
 

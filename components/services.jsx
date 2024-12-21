@@ -7,18 +7,17 @@ export default function Services() {
       image: '/images/home/services/facial.jpg',
       title: 'Facial Treatments',
       items: [
-        'Anti-aging facials to smooth out wrinkles and fine lines',
-        'Hydrating facials for a glowing, refreshed complexion',
-        'Acne treatments that work to clear up skin and boost confidence',
-        'Customized facials tailored to your unique skincare needs',
+        'Feel and live young.',
+        'Attain and maintain Acne-free, glass skin with aesthetic beauty trending facials for all skin types',
+        'Customized treatments tailored to your needs.',
       ],
     },
     {
       image: '/images/home/services/laser.jpg',
       title: 'Laser & Light Therapy',
       items: [
-        'IPL (Intense Pulsed Light) for skin rejuvenation and glow',
-        'Effective acne scar treatments',
+        'Reignite your dull skin with Intense Pulsed Light [IPL], for skin rejuvenation and glow.',
+        'Brighten your skin, by eliminating acne scars and hyperpigmentation.',
         'Pigmentation reduction to brighten your skin tone',
       ],
     },
@@ -26,8 +25,8 @@ export default function Services() {
       image: '/images/home/services/body.jpg',
       title: 'Body Treatments',
       items: [
-        'Body contouring to help you feel more confident in your skin',
-        'Cellulite treatments to smooth and tighten the skin',
+        'Feel confident in your body with expert care.',
+        'Cellulite treatments for natural skin tightening, scrubs and spa leaving your skin hydrated and nourished.',
         'Luxurious scrubs & wraps that leave your skin feeling soft and nourished',
       ],
     },
@@ -35,8 +34,8 @@ export default function Services() {
       image: '/images/home/services/iStock-1353459858.jpg',
       title: 'Hair Removal',
       items: [
-        'Gentle yet effective laser hair removal',
-        'Traditional waxing for smooth, hair-free skin',
+        'Eliminate Unwanted hair with our cutting-edge laser hair removal services.',
+        'Quick yet traditional waxing for silky skin of all types.',
       ],
     },
   ];

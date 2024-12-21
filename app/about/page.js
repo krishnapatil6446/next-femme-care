@@ -11,9 +11,9 @@ const AboutUs = () => {
   ];
 
   const achievements = [
-    { value: "1000+", label: "Happy Clients" },
-    { value: "15+", label: "Years Experience" },
-    { value: "50+", label: "Treatments" }
+    { value: "100+", label: "Happy Clients" },
+    { value: "7+", label: "Years Experience" },
+    { value: "20+", label: "Treatments" }
   ];
 
   return (
@@ -48,7 +48,7 @@ const AboutUs = () => {
               <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center space-x-2">
                   <GraduationCap className="w-6 h-6 text-[#BF6159]" />
-                  <span className="text-[#BF6159] font-semibold">15+ Years Experience</span>
+                  <span className="text-[#BF6159] font-semibold">7+ Years Experience</span>
                 </div>
               </div>
             </div>
@@ -68,15 +68,13 @@ const AboutUs = () => {
               ))}
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              With extensive training and expertise in Homoeopathy, Clinical Cosmetology, and Trichology, 
-              Dr. Akansha Kharote brings a unique, integrated approach to skincare and wellness. Her comprehensive 
-              understanding of both natural healing principles and modern aesthetic techniques allows her 
-              to provide personalized solutions that address not just surface concerns, but overall well-being.
+            The founder of our brand, DR.AKANKSHA has dedicated her entire career to the cosmetology and healthcare industry.
+After extensive work experiences in healthcare INDUSTRY, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like gold in the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMOEOPATHIC treatments.
+HEMKANTI Clinic has patients from various cities who have embarked to have their desired treatments from our top skin specialist’s team.
+
             </p>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Combining the wisdom of traditional healing with cutting-edge cosmetic innovations, 
-              she ensures each treatment plan is tailored to achieve optimal results while maintaining 
-              the highest standards of safety and care.
+            We love what we do and therefore it reflects on you. Beauty is one of the key aspects of once confidence. The issue of confidence is very important in beauty, as in everything else.
             </p>
           </div>
         </div>
@@ -99,7 +97,7 @@ const AboutUs = () => {
       <div className="relative z-10 text-center max-w-3xl mx-auto">
         <h3 className="text-2xl font-semibold text-[#BF6159] mb-4">Our Promise</h3>
         <p className="text-gray-700 text-lg leading-relaxed">
-          At SkinGlow, we're committed to helping you achieve your best skin health through 
+          At Hemkanti, we're committed to helping you achieve your best skin health through 
           a perfect blend of traditional wisdom and modern science. Every treatment is 
           personalized to your unique needs, ensuring optimal results and lasting beauty.
         </p>

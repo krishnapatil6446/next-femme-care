@@ -5,37 +5,37 @@ export default function WhyChooseHemkanti() {
     {
       title: 'Experienced Experts',
       description:
-        'Our team includes some of the most talented and certified dermatologists, estheticians, and cosmetologists in Pune. We\'re here to guide you every step of the way.',
+        'Our skincare clinic is lead by professionals to provide expert advice and proven solutions.',
       icon: 'fa-user-md',
     },
     {
       title: 'Personalized Care',
       description:
-        'Your skin is unique, and so is your treatment plan. We take the time to understand your needs and offer personalized skincare solutions that really work for you.',
+        'Glow like never before, Personalized attention to your skin with exclusive offers and treatments..',
       icon: 'fa-user-check',
     },
     {
       title: 'Latest Technology',
       description:
-        'We invest in cutting-edge skincare technology that delivers proven results — so you always feel like you\'re getting the best care.',
+        'Stay ahead in skin-care, with cutting-edge treatments powered by advanced technology at our clinic.',
       icon: 'fa-microchip',
     },
     {
       title: 'Trusted, High-Quality Products',
       description:
-        'We use only the best skincare products, including trusted brands like Dermalogica, Kiehl\'s, and The Ordinary — all carefully selected for their quality and effectiveness.',
+        'Experience premium care with out clinic’s, with top quality products designed for quality and lasting results.',
       icon: 'fa-leaf',
     },
     {
       title: 'A Relaxing, Healing Space',
       description:
-        'Our clinic isn\'t just a place for treatments — it\'s a sanctuary. Come relax, unwind, and leave feeling refreshed, rejuvenated, and ready to take on the world.',
+        'Give your Skin and Body a break , with a skincare healing space, where comfort meets expertise for a refreshing and rejuvenating skincare journey.',
       icon: 'fa-spa',
     },
      {
       title: 'Comprehensive Follow-Up',
       description:
-        'Our care doesn’t stop after your treatment. We provide thorough follow-up support and guidance to ensure long-lasting results and your complete satisfaction.',
+        'Achieve and maintain Glass Skin with our clinic’s detailed follow up care, tailored to your needs.',
       icon: 'fa-calendar-check',
     },
   ];

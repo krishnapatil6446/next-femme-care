@@ -4,9 +4,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Brand Info */}
         <div>
-          <h3 className="text-white text-2xl font-bold mb-4">Hemkranti</h3>
+          <h3 className="text-white text-2xl font-bold mb-4">Hemkanti</h3>
           <p className="text-sm">
-            Unlocking the secret to smoother, hydrated skin with premium treatments and care.
+          Heal and Glow with our skincare clinic services
+
           </p>
         </div>
 
@@ -21,7 +22,17 @@ export default function Footer() {
             </li>
             <li>
               <a href="#" className="hover:text-white transition duration-300">
+                About us
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition duration-300">
                 Services
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition duration-300">
+               Products
               </a>
             </li>
             <li>

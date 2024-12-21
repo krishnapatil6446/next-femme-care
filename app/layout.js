@@ -8,7 +8,7 @@ import FloatingButton from "../components/FloatingButton";
 
 export const metadata = {
   title: "Hemkanti",
-  description: "Hemkanti Clinic",
+  description: "Heal and Glow with our skincare clinic services",
 };
 
 export default function RootLayout({ children }) {
