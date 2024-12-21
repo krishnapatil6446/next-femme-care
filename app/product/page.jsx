@@ -1,5 +1,6 @@
 import ProductCard from "../../components/productCard";
 import SectionHeader from "../../components/SectionHeader";
+import Head from 'next/head';
 
 const Products = () => {
   const products = [

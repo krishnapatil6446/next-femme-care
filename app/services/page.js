@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Search, Calendar, Star, ArrowRight, Clock, Filter, X, Heart, Share2, ChevronDown, Info } from "lucide-react";
 import servicesData from './services-data.json';
 import BookAppointmentModal from '../../components/BookAppointmentModal'; // Import the modal component
+import Head from 'next/head';
 
 const ServiceInterface = () => {
   const [activeTab, setActiveTab] = useState("Cosmetology");

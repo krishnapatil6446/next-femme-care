@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { GraduationCap, Stars } from 'lucide-react';
+import Head from 'next/head';
 
 const AboutUs = () => {
   const qualifications = [

@@ -6,6 +6,7 @@ import Services from "../components/services";
 import FaqTestimonials from "../components/testimonials";
 import FloatingButtonWithModal from "../components/FloatingButton";
 import NewArrivals from "../components/blog";
+import Head from 'next/head';
 
 function Home() {
   const slides = [
