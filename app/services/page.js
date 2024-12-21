@@ -143,6 +143,33 @@ const ServiceInterface = () => {
     ));
 
   return (
+    //SEO for Services
+    <>
+    <Head>
+        <title>Services|Hemkanti</title>
+        <meta 
+          name="description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more." 
+        />
+        <meta 
+          name="keywords" 
+          content="
+            best skin care products in Pimple Saudagar, skin care centre near Kokane Chowk, hair coloring services, hair treatment centre near Kokane Chowk Pune, skin clinic, HydraFacial, hair loss treatment, skin brightening services, skin specialist, tattoo removal, laser hair reduction, birth mark removal, melasma treatment, laser hair removal, skin discoloration, Korean glass skin, vampire facial, best hair rebonding, skin care centre near me, hair loss issues
+          "
+        />
+        <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
+        <meta 
+          property="og:description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
+        />
+        <meta property="og:image" content="/images/services-banner.jpg" />
+        <meta property="og:url" content="https://www.hemkanti.com/services" />
+        <link rel="canonical" href="https://www.hemkanti.com/services" />
+      </Head>
+    
+    
+    
+  
     <section className="bg-gradient-to-br from-[#FFF4ED] to-[#FFE7E1] py-16 min-h-screen">
       {showPromo && (
         // <div className="fixed top-0 left-0 right-0 bg-[#754737] text-white py-2 px-4 text-center z-50">
@@ -276,6 +303,7 @@ const ServiceInterface = () => {
         handleInputChange={handleInputChange}
       />
     </section>
+    </>
   );
 };
 

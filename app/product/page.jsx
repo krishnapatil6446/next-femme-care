@@ -48,6 +48,28 @@ const Products = () => {
   ];
 
   return (
+    // SEO for Products
+    <>
+    <Head>
+        <title> Products|Hemkanti</title>
+        <meta 
+          name="description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more." 
+        />
+        <meta 
+          name="keywords" 
+          content="Anti-Aging Cream, Natural skin care products, Conditioner "/>
+        <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
+        <meta 
+          property="og:description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
+        />
+        <meta property="og:image" content="/images/services-banner.jpg" />
+        <meta property="og:url" content="https://www.hemkanti.in/products" />
+        <link rel="canonical" href="https://www.hemkanti.in/products" />
+      </Head>
+    
+    
     <section className="bg-[#FDE6D5] py-16 px-6">
       {/* Section Header */}
       <SectionHeader
@@ -67,6 +89,7 @@ const Products = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

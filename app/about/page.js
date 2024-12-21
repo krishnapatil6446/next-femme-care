@@ -17,6 +17,28 @@ const AboutUs = () => {
   ];
 
   return (
+
+// SEO for About Us
+    <>
+    <Head>
+        <title> About Us|Hemkanti</title>
+        <meta 
+          name="description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more." 
+        />
+        <meta 
+          name="keywords" 
+          content="Dr.Akansha Kharote, Akansha Kharote, Dr.Kharote, Skin care specialist"/>
+        <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
+        <meta 
+          property="og:description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
+        />
+        <meta property="og:image" content="/images/services-banner.jpg" />
+        <meta property="og:url" content="https://www.hemkanti.in/about-us" />
+        <link rel="canonical" href="https://www.hemkanti.in/about-us" />
+      </Head>
+    
     <section className="bg-gradient-to-r from-[#FFF5F3] via-[#FEE9E5] to-[#FFF5F3] py-20 px-6 relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full">
@@ -132,6 +154,7 @@ HEMKANTI Clinic has patients from various cities who have embarked to have their
         `}
       </style>
     </section>
+    </>
   );
 };
 
