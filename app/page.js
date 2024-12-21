@@ -48,6 +48,27 @@ function Home() {
   }, []);
 
   return (
+
+    <>
+    <Head>
+        <title> Home|Hemkanti</title>
+        <meta 
+          name="description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more." 
+        />
+        <meta 
+          name="keywords" 
+          content="Hemkanti, Laser & Light Therapy, Hair removal"/>
+        <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
+        <meta 
+          property="og:description" 
+          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
+        />
+        <meta property="og:image" content="/images/services-banner.jpg" />
+        <meta property="og:url" content="https://www.hemkanti.in/home" />
+        <link rel="canonical" href="https://www.hemkanti.in/home" />
+      </Head>
+
     <div className="overflow-hidden">
       {/* Hero Section */}
       <div className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 4rem)' }}>        {slides.map((slide, index) => (
@@ -152,6 +173,7 @@ function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
