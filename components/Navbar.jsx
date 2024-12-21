@@ -43,7 +43,7 @@ const Navbar = () => {
             { name: "ABOUT US", href: "/about" },
             { name: "SERVICES", href: "/services" },
             { name: "PRODUCTS", href: "/product" },
-            { name: "BLOG", href: "/blogs" },
+            { name: "BLOG", href: "https://www.blogs.hemkanti.com" },
             { name: "CONTACT US", href: "/contact" },
           ].map((item, index) => (
             <Link

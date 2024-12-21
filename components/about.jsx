@@ -6,17 +6,19 @@ export default function About() {
       <div className="max-w-6xl w-full px-6 py-16 lg:py-20">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Image Section */}
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-500 ease-in-out">
-              <Image
-                src="/images/home/about.jpg"
-                alt="Hemkanti Clinic"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-xl"
-              />
-            </div>
-          </div>
+          <div className="md:w-1/2 w-full flex justify-center">
+  <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-500 ease-in-out">
+    <Image
+      src="/images/home/about.jpg"
+      alt="Hemkanti Clinic"
+      layout="fill"
+      objectFit="cover"
+      className="rounded-xl"
+      title="Hemkanti Clinic"
+    />
+  </div>
+</div>
+
 
           {/* Content Section */}
           <div className="md:w-1/2 md:pl-8">

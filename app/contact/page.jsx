@@ -2,6 +2,24 @@
 import { useState } from "react";
 import Image from "next/image";
 
+const faqs = [
+  {
+    question: "How do I book an appointment?",
+    answer:
+      "You can book an appointment by calling our clinic, sending us an email, or using our online booking system on the website. We recommend booking in advance, especially for popular treatments.",
+  },
+  {
+    question: "Are your treatments safe?",
+    answer:
+      "Yes, all of our treatments are performed by licensed professionals using FDA-approved products and equipment. We prioritize the safety and comfort of our clients and ensure each treatment is tailored to your individual needs.",
+  },
+  {
+    question: "Are there any side effects to the treatments?",
+    answer:
+      "Most of our treatments are non-invasive and have minimal to no side effects. However, some treatments like injectables or chemical peels may have temporary swelling, redness, or mild irritation. Our team will explain potential side effects during your consultation.",
+  },
+];
+
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,6 +66,8 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
+
+  const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <section className="bg-gradient-to-r from-[#FFF2EC] to-[#FFE6D9] py-16 px-6 lg:px-16">
@@ -131,7 +151,7 @@ const Contact = () => {
           {/* Contact Details */}
           <div className="flex flex-col justify-center items-center">
             <Image
-              src="/images/contact-us.jpg"
+              src="/images/home/about.jpg"
               alt="Contact Us"
               width={400}
               height={400}
@@ -140,15 +160,14 @@ const Contact = () => {
             <div className="mt-8 text-center">
               <p className="text-gray-700 text-lg font-medium">
                 <span className="font-bold text-[#BF6159]">Email:</span>{" "}
-                support@skincare.com
+                support@hemkanti.com
               </p>
               <p className="text-gray-700 text-lg font-medium mt-4">
-                <span className="font-bold text-[#BF6159]">Phone:</span> +1
-                234-567-890
+                <span className="font-bold text-[#BF6159]">Phone:</span> +919511604677
+
               </p>
               <p className="text-gray-700 text-lg font-medium mt-4">
-                <span className="font-bold text-[#BF6159]">Address:</span> 123
-                Beauty Ave, Skintown, USA
+                <span className="font-bold text-[#BF6159]">Address: </span>Shivar Chowk, Sunshine Villas, Dwarkadheesh Gardens, Pimple Saudagar, Pune, Pimpri-Chinchwad, Maharashtra 411017
               </p>
             </div>
           </div>
@@ -161,10 +180,10 @@ const Contact = () => {
           </h2>
           <div className="flex flex-col lg:flex-row justify-between items-center text-gray-700 space-y-4 lg:space-y-0">
             <p>
-              <span className="font-bold">Monday - Friday:</span> 9:00 AM - 6:00 PM
+              <span className="font-bold">Monday - Friday:</span> 9:00 AM - 8:00 PM
             </p>
             <p>
-              <span className="font-bold">Saturday:</span> 10:00 AM - 4:00 PM
+              <span className="font-bold">Saturday:</span> 9:00 AM - 8:00 PM
             </p>
             <p>
               <span className="font-bold">Sunday:</span> Closed
@@ -172,31 +191,36 @@ const Contact = () => {
           </div>
         </div>
 
+   
+    
         {/* FAQ Section */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold text-[#BF6159] text-center mb-6">
+        <div className="max-w-7xl mx-auto mt-12">
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold text-[#6D4C41] mb-8 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-2xl shadow-md">
-              <h3 className="text-xl font-medium text-gray-800">
-                How can I track my order?
-              </h3>
-              <p className="text-gray-600 mt-2">
-                You can track your order by logging into your account and
-                visiting the "My Orders" section.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-md">
-              <h3 className="text-xl font-medium text-gray-800">
-                Do you offer international shipping?
-              </h3>
-              <p className="text-gray-600 mt-2">
-                Yes, we offer worldwide shipping. Shipping times and fees vary
-                based on your location.
-              </p>
-            </div>
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="border border-[#E0C9B5] rounded-lg p-4 hover:bg-[#FDE6D5] transition-all duration-300 cursor-pointer"
+                onClick={() =>
+                  setOpenIndex(openIndex === index ? null : index)
+                }
+              >
+                <div className="flex justify-between items-center">
+                  <h3 className="text-lg font-semibold">{faq.question}</h3>
+                  <span className="text-2xl text-[#8D6E63]">
+                    {openIndex === index ? "−" : "+"}
+                  </span>
+                </div>
+                {openIndex === index && (
+                  <p className="mt-2 text-gray-600">{faq.answer}</p>
+                )}
+              </div>
+            ))}
           </div>
+        </div>
         </div>
 
         {/* Map Section */}

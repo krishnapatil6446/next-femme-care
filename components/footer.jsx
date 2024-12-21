@@ -21,27 +21,27 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a href="/about" className="hover:text-white transition duration-300">
                 About us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a href="/services" className="hover:text-white transition duration-300">
                 Services
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a href="/products" className="hover:text-white transition duration-300">
                Products
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a href="https://www.blogs.hemkanti.com" className="hover:text-white transition duration-300">
                 Blog
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-300">
+              <a href="/contact" className="hover:text-white transition duration-300">
                 Contact Us
               </a>
             </li>
@@ -55,7 +55,7 @@ export default function Footer() {
             <li>📍 Pune, Maharashtra</li>
             <li>📞 +91 98765 43210</li>
             <li>✉️ info@hemkranti.com</li>
-            <li>⏰ Mon - Sat: 9:00 AM - 6:00 PM</li>
+            <li>⏰ Mon - Sat: 9:00 AM - 8:00 PM</li>
           </ul>
         </div>
 
@@ -76,7 +76,7 @@ export default function Footer() {
               <i className="fab fa-twitter text-white"></i>
             </a>
             <a
-              href="#"
+              href="http://www.instagram.com/hemkanti.online"
               className="w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-red-500 transition"
             >
               <i className="fab fa-instagram text-white"></i>
@@ -93,7 +93,7 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="border-t border-gray-700 mt-10 pt-5 text-center text-sm">
-        <p>&copy; {new Date().getFullYear()} Hemkranti. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Hemkanti. All Rights Reserved.</p>
       </div>
     </footer>
   );
