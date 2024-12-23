@@ -70,7 +70,7 @@ const Contact = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="bg-gradient-to-r from-[#FFF2EC] to-[#FFE6D9] py-16 px-6 lg:px-16">
+    <section className="bg-gradient-to-r from-[#FFF5F3] via-[#FEE9E5] to-[#FFF5F3] py-20 px-6 relative overflow-hidden">
       <div className="container mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">

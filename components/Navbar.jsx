@@ -12,23 +12,16 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-
-    // Handle initial scroll position
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      // Reset body style on unmount
       document.body.style.overflow = "unset";
     };
   }, []);
 
   useEffect(() => {
-    // Handle body scroll lock
     document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
-
-    // Cleanup function to reset body style when component unmounts
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -54,70 +47,77 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? "top-0 bg-white/98 backdrop-blur-md shadow-sm"
-            : "bg-[#f3e0d9]"
-        }`}
-      >
-        <div className="container mx-auto">
-          <div className="flex justify-between items-center h-16 lg:h-16">
-            <Link href="/" className="relative z-50">
-              <Image
-                src="/images/white-bg-hemkanti_mw-removebg-preview.png"
-                alt="HEMKANTI Logo"
-                width={150}
-                height={38}
-                className="object-contain"
-                priority
-              />
-            </Link>
+<nav
+  className={`fixed inset-x-0 z-50 transition-all duration-300 ${
+    isScrolled
+      ? "top-0 bg-white/98 backdrop-blur-md shadow-sm"
+      : "bg-[#f3e0d9]"
+  }`}
+>
+  <div
+    className="container mx-auto px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 max-w-[1400px]"
+  >
+    <div className="flex justify-between items-center h-16 lg:h-16">
+      {/* Logo Section */}
+      <Link href="/" className="relative z-50">
+        <Image
+          src="/images/white-bg-hemkanti_mw-removebg-preview.png"
+          alt="HEMKANTI Logo"
+          width={150}
+          height={38}
+          className="object-contain"
+          priority
+        />
+      </Link>
 
-            <div className="hidden lg:flex items-center">
-              <div className="flex items-center space-x-10">
-                {navItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className="text-neutral-700 hover:text-[#bf6159] text-[13px] tracking-widest font-medium relative group transition-colors duration-300"
-                  >
-                    <span className="relative inline-block py-2">
-                      {item.name}
-                      <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-neutral-800 transition-all duration-300 group-hover:w-full"></span>
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <button
-              className="lg:hidden relative z-50 p-2"
-              onClick={handleMenuClick}
-              aria-label="Toggle Menu"
+      {/* Navigation Links for Larger Screens */}
+      <div className="hidden lg:flex items-center">
+        <div className="flex items-center space-x-10">
+          {navItems.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className="text-neutral-700 hover:text-[#bf6159] text-[13px] tracking-widest font-medium relative group transition-colors duration-300"
             >
-              <div className="w-6 h-5 flex flex-col justify-between">
-                <span
-                  className={`w-full h-0.5 bg-neutral-800 transform transition-all duration-300 ${
-                    isMenuOpen ? "rotate-45 translate-y-2" : ""
-                  }`}
-                ></span>
-                <span
-                  className={`w-full h-0.5 bg-neutral-800 transform transition-all duration-300 ${
-                    isMenuOpen ? "opacity-0" : ""
-                  }`}
-                ></span>
-                <span
-                  className={`w-full h-0.5 bg-neutral-800 transform transition-all duration-300 ${
-                    isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                  }`}
-                ></span>
-              </div>
-            </button>
-          </div>
+              <span className="relative inline-block py-2">
+                {item.name}
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-neutral-800 transition-all duration-300 group-hover:w-full"></span>
+              </span>
+            </Link>
+          ))}
         </div>
-      </nav>
+      </div>
 
+      {/* Mobile Menu Button */}
+      <button
+        className="lg:hidden relative z-50 p-2"
+        onClick={handleMenuClick}
+        aria-label="Toggle Menu"
+      >
+        <div className="w-6 h-5 flex flex-col justify-between">
+          <span
+            className={`w-full h-0.5 bg-neutral-800 transform transition-all duration-300 ${
+              isMenuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`w-full h-0.5 bg-neutral-800 transform transition-all duration-300 ${
+              isMenuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`w-full h-0.5 bg-neutral-800 transform transition-all duration-300 ${
+              isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+      {/* Rest of the code remains the same */}
       <div
         className={`fixed inset-0 bg-[#f3e0d9] z-40 transform transition-all duration-500 lg:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"

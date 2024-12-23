@@ -28,6 +28,7 @@ const ServiceInterface = () => {
     phone: '',
     service: '',
     time: '',
+
     date: ''
   });
 
@@ -105,10 +106,10 @@ const ServiceInterface = () => {
         <p className="text-sm text-gray-600 mb-4">{service.description}</p>
         
         <div className="flex items-center gap-4 mb-4">
-          <div className="flex items-center gap-1 text-gray-600">
+          {/* <div className="flex items-center gap-1 text-gray-600">
             <Clock className="w-4 h-4" />
             <span className="text-sm">{service.duration}</span>
-          </div>
+          </div> */}
           <div className="flex items-center gap-1">
             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
             <span className="text-sm font-medium text-gray-600">{service.rating}</span>
@@ -171,7 +172,7 @@ const ServiceInterface = () => {
     
     
   
-    <section className="bg-gradient-to-br from-[#FFF4ED] to-[#FFE7E1] py-16 min-h-screen overflow-x-hidden">
+      <section className="bg-gradient-to-r from-[#FFF5F3] via-[#FEE9E5] to-[#FFF5F3] py-20 px-6 relative overflow-hidden">
       {showPromo && (
         // <div className="fixed top-0 left-0 right-0 bg-[#754737] text-white py-2 px-4 text-center z-50">
           <div className="container mx-auto flex justify-between items-center">
@@ -188,9 +189,9 @@ const ServiceInterface = () => {
       <div className="text-center mb-16 max-w-4xl mx-auto px-4">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">
           Discover Your{" "}
-          <span className="text-[#754737] relative">
+          <span className="text-[#BF6159] relative">
             Glow
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#754737] opacity-20" />
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#BF6159] opacity-20" />
           </span>
         </h1>
         <p className="text-lg text-gray-600 mb-8">

@@ -8,17 +8,17 @@ export default function Services() {
       title: 'Facial Treatments',
       items: [
         'Feel and live young.',
-        'Attain and maintain Acne-free, glass skin with aesthetic beauty trending facials for all skin types',
+        'Attain and maintain acne-free, glass skin with aesthetic beauty trending facials for all skin types.',
         'Customized treatments tailored to your needs.',
       ],
     },
     {
-      image: '/images/home/services/laser.jpg',
+      image: '/images/home/services/laser2.jpg',
       title: 'Laser & Light Therapy',
-      items: [
-        'Reignite your dull skin with Intense Pulsed Light [IPL], for skin rejuvenation and glow.',
-        'Brighten your skin, by eliminating acne scars and hyperpigmentation.',
-        'Pigmentation reduction to brighten your skin tone',
+    items: [
+      'Skin Brightening with advanced laser treatments.',
+      'Treat hyperpigmentation and melasma for an even skin tone.',
+      'Remove unwanted tattoos and birthmarks using our advanced laser technology.',
       ],
     },
     {
@@ -26,19 +26,19 @@ export default function Services() {
       title: 'Body Treatments',
       items: [
         'Feel confident in your body with expert care.',
-        'Cellulite treatments for natural skin tightening, scrubs and spa leaving your skin hydrated and nourished.',
-        'Luxurious scrubs & wraps that leave your skin feeling soft and nourished',
+        'Cellulite treatments for natural skin tightening, scrubs, and spa leaving your skin hydrated and nourished.',
+        'Luxurious scrubs and wraps that leave your skin feeling soft and nourished.',
       ],
     },
     {
       image: '/images/home/services/iStock-1353459858.jpg',
       title: 'Hair Removal',
       items: [
-        'Eliminate Unwanted hair with our cutting-edge laser hair removal services.',
-        'Quick yet traditional waxing for silky skin of all types.',
+        'Eliminate unwanted hair with our cutting-edge laser hair removal services.',
       ],
     },
   ];
+  
 
   return (
     <div className="bg-[#FFF9F4] py-16 text-gray-700">

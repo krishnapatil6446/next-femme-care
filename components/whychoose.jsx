@@ -5,41 +5,41 @@ export default function WhyChooseHemkanti() {
     {
       title: 'Experienced Experts',
       description:
-        'Our skincare clinic is lead by professionals to provide expert advice and proven solutions.',
+        'Our clinic is led by skilled professionals, dedicated to providing expert advice and proven solutions for your skin and hair care.',
       icon: 'fa-user-md',
     },
     {
       title: 'Personalized Care',
       description:
-        'Glow like never before, Personalized attention to your skin with exclusive offers and treatments..',
+        'Experience the glow like never before with personalized care tailored to your skin, with exclusive offers and treatments designed just for you.',
       icon: 'fa-user-check',
     },
     {
       title: 'Latest Technology',
       description:
-        'Stay ahead in skin-care, with cutting-edge treatments powered by advanced technology at our clinic.',
+        'Stay ahead in skin care with cutting-edge treatments powered by the latest technology and US FDA APPROVED MACHINES at our clinic for safe and effective results.',
       icon: 'fa-microchip',
     },
     {
       title: 'Trusted, High-Quality Products',
       description:
-        'Experience premium care with out clinic’s, with top quality products designed for quality and lasting results.',
+        'Experience premium care with top-quality products at our clinic, designed to provide lasting results and maintain your skin’s health.',
       icon: 'fa-leaf',
     },
     {
       title: 'A Relaxing, Healing Space',
       description:
-        'Give your Skin and Body a break , with a skincare healing space, where comfort meets expertise for a refreshing and rejuvenating skincare journey.',
+        'Give your skin and body the care they deserve in our healing space, where comfort meets expertise for a rejuvenating skincare journey.',
       icon: 'fa-spa',
     },
-     {
+    {
       title: 'Comprehensive Follow-Up',
       description:
-        'Achieve and maintain Glass Skin with our clinic’s detailed follow up care, tailored to your needs.',
+        'Achieve and maintain glowing skin with our clinic’s detailed follow-up care, customized to meet your unique needs and goals.',
       icon: 'fa-calendar-check',
     },
   ];
-
+  
   return (
     <div className="bg-[#FDE6D5] py-12 text-gray-800">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">

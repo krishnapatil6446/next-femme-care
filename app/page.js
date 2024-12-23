@@ -18,6 +18,7 @@ function Home() {
     },
     {
       image: "/images/home/photo2-transformed-removebg-preview.png",
+      image: "/images/home/photo2.png",
       title: "Feel Young and Refreshed",
       description: "Explore aesthetic treatments and expert tips to rejuvenate your skin.",
     },
@@ -90,14 +91,12 @@ function Home() {
                   quality={90}
                   sizes="100vw"
                   className="object-cover"
-                 onLoad={() => setIsLoading(false)}
+                  onLoad={() => setIsLoading(false)}
                   style={{
                     opacity: isLoading ? 0 : 1,
                     transition: 'opacity 0.3s ease-in-out'
                   }}
                 />
-             
-
                 {/* Caption */}
                 <div className="absolute inset-0 flex flex-col justify-end items-center text-white p-8 animate-fade-up">
                   <h5 className="text-4xl sm:text-6xl font-bold mb-4 text-center animate-fade drop-shadow-lg">
@@ -155,6 +154,9 @@ function Home() {
           </h2>
           <p className="text-center text-lg text-gray-600 mt-2">
             Your trusted skincare and wellness destination.
+          </p>
+          <p className="text-center text-lg text-gray-600 mt-2 italic font-semibold">
+            “The story where beauty and medicine intersect”
           </p>
         </div>
 

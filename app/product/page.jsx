@@ -71,7 +71,7 @@ const Products = () => {
       </Head>
     
     
-    <section className="bg-[#FDE6D5] py-16 px-6">
+      <section className="bg-gradient-to-r from-[#FFF5F3] via-[#FEE9E5] to-[#FFF5F3] py-20 px-6 relative overflow-hidden">
       {/* Section Header */}
       <SectionHeader
         title="Our Skincare Collection"
@@ -84,7 +84,6 @@ const Products = () => {
           <ProductCard
             key={index}
             name={product.name}
-            // description={product.description}
             image={product.image}
           />
         ))}
