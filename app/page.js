@@ -17,7 +17,6 @@ function Home() {
       description: "Discover tailored prices and skincare treatments near you for a radiant look.",
     },
     {
-      image: "/images/home/photo2-transformed-removebg-preview.png",
       image: "/images/home/photo2.png",
       title: "Feel Young and Refreshed",
       description: "Explore aesthetic treatments and expert tips to rejuvenate your skin.",
