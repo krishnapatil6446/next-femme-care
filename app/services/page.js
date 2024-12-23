@@ -171,7 +171,7 @@ const ServiceInterface = () => {
     
     
   
-    <section className="bg-gradient-to-br from-[#FFF4ED] to-[#FFE7E1] py-16 min-h-screen">
+    <section className="bg-gradient-to-br from-[#FFF4ED] to-[#FFE7E1] py-16 min-h-screen overflow-x-hidden">
       {showPromo && (
         // <div className="fixed top-0 left-0 right-0 bg-[#754737] text-white py-2 px-4 text-center z-50">
           <div className="container mx-auto flex justify-between items-center">
