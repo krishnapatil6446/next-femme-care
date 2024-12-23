@@ -1,37 +1,169 @@
 {
-    "categories": {
-      "Cosmetology": {
-        "icon": "💅",
-        "description": "Professional beauty treatments",
-        "services": [
-          {
-            "id": "cos-1",
-            "name": "Service A",
-            "icon": "💄",
-            "description": "Enhance your natural beauty with our premium service.",
-            "longDescription": "Our signature beauty treatment combines the latest techniques with premium products to enhance your natural features.",
-            "badge": "Popular",
-            "rating": 4.8,
-            "price": 99,
-            "duration": "60 min",
-            "benefits": ["Natural look", "Long-lasting", "Premium products"],
-            "availableSlots": ["Morning", "Afternoon", "Evening"]
-          },
-          {
-            "id": "cos-2",
-            "name": "Service B",
-            "icon": "🧖‍♀️",
-            "description": "Relax and rejuvenate your skin.",
-            "longDescription": "A relaxing treatment that combines massage and skincare for ultimate rejuvenation.",
-            "rating": 4.6,
-            "price": 129,
-            "duration": "90 min",
-            "benefits": ["Deep relaxation", "Skin renewal", "Anti-aging"],
-            "availableSlots": ["Morning", "Afternoon"]
-          }
+  "categories": {
+    "Skin": {
+      "icon": "💅",
+      "description": "Professional beauty treatments",
+      "services": [
+        {
+          "id": "cos-1",
+          "name": "Skin Polishing",
+          "icon": "✨",
+          "description": "Give your skin a fresh glow with our skin polishing service.",
+          "longDescription": "Our skin polishing treatment removes dead skin cells, leaving your skin feeling smooth, rejuvenated, and radiant.",
+          "rating": 4.8,
+          "price": 99,
+          "duration": "60 min",
+          "benefits": ["Smooth skin", "Glowing complexion", "Exfoliation"],
+          "availableSlots": ["Morning", "Afternoon", "Evening"]
+        },
+        {
+          "id": "cos-2",
+          "name": "Chemical Peels",
+          "icon": "🍊",
+          "description": "Renew your skin with a chemical peel.",
+          "longDescription": "Our chemical peel treatments help to reduce acne scars, fine lines, and pigmentation, revealing a fresher, smoother complexion.",
+          "rating": 4.7,
+          "price": 129,
+          "duration": "75 min",
+          "benefits": ["Skin renewal", "Acne scar treatment", "Brightening"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-3",
+          "name": "Microneedling",
+          "icon": "🔬",
+          "description": "Stimulate collagen production with microneedling.",
+          "longDescription": "This treatment involves tiny needles that stimulate collagen production, improving skin texture, tone, and reducing wrinkles.",
+          "rating": 4.9,
+          "price": 159,
+          "duration": "90 min",
+          "benefits": ["Collagen boost", "Wrinkle reduction", "Skin rejuvenation"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-4",
+          "name": "Mesotherapy of Skin",
+          "icon": "💉",
+          "description": "Nourish and hydrate your skin with mesotherapy.",
+          "longDescription": "Mesotherapy delivers a combination of vitamins, enzymes, and hyaluronic acid to rejuvenate and hydrate your skin, promoting a youthful look.",
+          "rating": 4.8,
+          "price": 199,
+          "duration": "60 min",
+          "benefits": ["Hydration", "Skin rejuvenation", "Anti-aging"],
+          "availableSlots": ["Morning", "Afternoon", "Evening"]
+        },
+        {
+          "id": "cos-5",
+          "name": "Wart/Mole/Skin Tag Removal",
+          "icon": "⚡",
+          "description": "Remove warts, moles, and skin tags safely and effectively.",
+          "longDescription": "We use advanced techniques to safely and effectively remove unwanted warts, moles, and skin tags with minimal downtime.",
+          "rating": 4.6,
+          "price": 79,
+          "duration": "30 min",
+          "benefits": ["Quick recovery", "Safe removal", "Non-invasive"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-6",
+          "name": "Glutathione Skin Whitening",
+          "icon": "🌟",
+          "description": "Achieve a brighter and more even skin tone with glutathione.",
+          "longDescription": "Our glutathione skin whitening treatment brightens skin tone and helps to fade dark spots and pigmentation.",
+          "rating": 4.7,
+          "price": 139,
+          "duration": "80 min",
+          "benefits": ["Whitening", "Even skin tone", "Anti-oxidant properties"],
+          "availableSlots": ["Morning", "Afternoon", "Evening"]
+        },
+        {
+          "id": "cos-7",
+          "name": "Anti-aging Treatment",
+          "icon": "👵",
+          "description": "Rejuvenate your skin with our anti-aging treatment.",
+          "longDescription": "Our anti-aging treatments combine various techniques to reduce the appearance of wrinkles, fine lines, and age spots, giving you a youthful look.",
+          "rating": 4.9,
+          "price": 179,
+          "duration": "90 min",
+          "benefits": ["Wrinkle reduction", "Youthful appearance", "Skin firming"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-8",
+          "name": "Bridal and Groom Preparation",
+          "icon": "👰",
+          "description": "Perfect your look for the big day with our bridal and groom preparation packages.",
+          "longDescription": "Our bridal and groom preparation services include facials, skin care, and body treatments to ensure you look flawless on your wedding day.",
+          "rating": 5.0,
+          "price": 299,
+          "duration": "120 min",
+          "benefits": ["Radiant skin", "Relaxing treatments", "Wedding-ready glow"],
+          "availableSlots": ["Morning", "Afternoon", "Evening"]
+        },
+        {
+          "id": "cos-9",
+          "name": "Breast Lift",
+          "icon": "👙",
+          "description": "Lift and firm your breast with our specialized treatment.",
+          "longDescription": "A non-surgical breast lift that uses advanced techniques to lift and firm the breast tissue, giving you a youthful shape.",
+          "rating": 4.8,
+          "price": 199,
+          "duration": "60 min",
+          "benefits": ["Firming", "Youthful appearance", "Non-invasive"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-10",
+          "name": "Breast Rejuvenation",
+          "icon": "💖",
+          "description": "Rejuvenate and enhance your breast appearance with our treatments.",
+          "longDescription": "Breast rejuvenation helps to restore firmness, smoothness, and elasticity in the breast area, giving you a refreshed and natural look.",
+          "rating": 4.7,
+          "price": 249,
+          "duration": "90 min",
+          "benefits": ["Firmness", "Elasticity", "Youthful shape"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-11",
+          "name": "Stretchmark Treatment",
+          "icon": "👗",
+          "description": "Reduce the appearance of stretchmarks with our specialized treatment.",
+          "longDescription": "Our stretchmark treatments help fade and reduce the visibility of stretchmarks, leaving you with smooth, clear skin.",
+          "rating": 4.6,
+          "price": 159,
+          "duration": "60 min",
+          "benefits": ["Stretchmark reduction", "Smooth skin", "Skin restoration"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-12",
+          "name": "Botox",
+          "icon": "💉",
+          "description": "Smooth out wrinkles and fine lines with Botox injections.",
+          "longDescription": "Botox is a non-surgical procedure to reduce wrinkles and fine lines by temporarily relaxing facial muscles.",
+          "rating": 4.9,
+          "price": 299,
+          "duration": "45 min",
+          "benefits": ["Wrinkle reduction", "Youthful look", "Non-invasive"],
+          "availableSlots": ["Morning", "Afternoon"]
+        },
+        {
+          "id": "cos-13",
+          "name": "Dermal Fillers",
+          "icon": "💋",
+          "description": "Enhance your facial features with dermal fillers.",
+          "longDescription": "Dermal fillers are used to add volume to your face, smoothing out wrinkles, and enhancing features like lips and cheeks.",
+          "rating": 4.9,
+          "price": 349,
+          "duration": "60 min",
+          "benefits": ["Facial enhancement", "Wrinkle reduction", "Youthful appearance"],
+          "availableSlots": ["Morning", "Afternoon"]
+        }
+   
+
         ]
       },
-      
         "Hair": {
           "icon": "💇‍♀️",
           "description": "Hair treatments for healthy, beautiful hair",

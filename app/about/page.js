@@ -13,8 +13,8 @@ const AboutUs = () => {
 
   const achievements = [
     { value: "100+", label: "Happy Clients" },
-    { value: "7+", label: "Years Experience" },
-    { value: "20+", label: "Treatments" }
+    { value: "10+", label: "Years Experience" },
+    { value: "50+", label: "Treatments" }
   ];
 
   return (
@@ -42,14 +42,11 @@ const AboutUs = () => {
     
     <section className="bg-gradient-to-r from-[#FFF5F3] via-[#FEE9E5] to-[#FFF5F3] py-20 px-6 relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
-        <div className="absolute top-40 right-20 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
-      </div>
+
 
       {/* Main Header */}
       <div className="text-center relative z-10 mb-16">
-        <h2 className="text-6xl font-bold text-[#BF6159] glow-text mb-6">Welcome to Hemkanti</h2>
+        <h2 className="text-6xl font-bold text-[#BF6159] glow-text mb-6">Welcome to Hemkanti Clinics</h2>
         <div className="w-24 h-1 bg-[#BF6159] mx-auto rounded-full shimmer-effect mb-6" />
       </div>
 
@@ -71,7 +68,7 @@ const AboutUs = () => {
               <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center space-x-2">
                   <GraduationCap className="w-6 h-6 text-[#BF6159]" />
-                  <span className="text-[#BF6159] font-semibold">7+ Years Experience</span>
+                  <span className="text-[#BF6159] font-semibold">10+ Years Experience</span>
                 </div>
               </div>
             </div>

@@ -8,14 +8,14 @@ import BookAppointmentModal from '../../components/BookAppointmentModal'; // Imp
 import Head from 'next/head';
 
 const ServiceInterface = () => {
-  const [activeTab, setActiveTab] = useState("Cosmetology");
+  const [activeTab, setActiveTab] = useState("Skin");
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredServices, setFilteredServices] = useState([]);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState({
-    priceRange: "all",
+    // priceRange: "all",
     duration: "all",
     availability: "all"
   });
@@ -39,10 +39,10 @@ const ServiceInterface = () => {
     );
 
     // Apply filters
-    if (filters.priceRange !== "all") {
-      const [min, max] = filters.priceRange.split("-").map(Number);
-      results = results.filter(service => service.price >= min && service.price <= max);
-    }
+    // if (filters.priceRange !== "all") {
+    //   const [min, max] = filters.priceRange.split("-").map(Number);
+    //   results = results.filter(service => service.price >= min && service.price <= max);
+    // }
     if (filters.duration !== "all") {
       results = results.filter(service => service.duration.includes(filters.duration));
     }
@@ -116,7 +116,7 @@ const ServiceInterface = () => {
         </div>
 
         <div className="flex flex-col gap-2 mb-4">
-          <div className="text-lg font-bold text-[#754737]">₹{service.price}</div>
+          {/* <div className="text-lg font-bold text-[#754737]">₹{service.price}</div> */}
           <div className="flex flex-wrap gap-2">
             {service.benefits.map((benefit, index) => (
               <span 
@@ -229,7 +229,7 @@ const ServiceInterface = () => {
           <div className="bg-white rounded-xl p-6 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                {/* <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
                 <select
                   value={filters.priceRange}
                   onChange={(e) => setFilters(prev => ({...prev, priceRange: e.target.value}))}
@@ -241,7 +241,7 @@ const ServiceInterface = () => {
                   <option value="200-300">$200+</option>
                 </select>
               </div>
-              <div>
+              <div> */}
                 <label className="block text-sm font-medium text-gray-700 mb-2">Duration</label>
                 <select
                   value={filters.duration}
@@ -274,8 +274,8 @@ const ServiceInterface = () => {
       )}
 
       {/* Category Tabs */}
-      <div className="flex justify-center gap-4 mb-8 px-4">
-        {Object.keys(servicesData.categories).map((category) => (
+      <div className="flex flex-wrap justify-center gap-4 mb-8 px-4 overflow-hidden">
+      {Object.keys(servicesData.categories).map((category) => (
           <button
             key={category}
             onClick={() => setActiveTab(category)}

@@ -163,11 +163,12 @@ const Contact = () => {
                 support@hemkanti.com
               </p>
               <p className="text-gray-700 text-lg font-medium mt-4">
-                <span className="font-bold text-[#BF6159]">Phone:</span> +919511604677
+                <span className="font-bold text-[#BF6159]">Phone:</span> +919405631363
 
               </p>
               <p className="text-gray-700 text-lg font-medium mt-4">
-                <span className="font-bold text-[#BF6159]">Address: </span>Shivar Chowk, Sunshine Villas, Dwarkadheesh Gardens, Pimple Saudagar, Pune, Pimpri-Chinchwad, Maharashtra 411017
+                <span className="font-bold text-[#BF6159]">Address: </span>Hemkanti Clinics
+                Off No:207, Commerce Centre,Shivar Garden Road, Pimple Saudagar, Pune, (MH),India -411017
               </p>
             </div>
           </div>
@@ -180,13 +181,13 @@ const Contact = () => {
           </h2>
           <div className="flex flex-col lg:flex-row justify-between items-center text-gray-700 space-y-4 lg:space-y-0">
             <p>
-              <span className="font-bold">Monday - Friday:</span> 9:00 AM - 8:00 PM
+              <span className="font-bold">Monday - Friday:</span> 11:00 AM - 8:00 PM
             </p>
             <p>
-              <span className="font-bold">Saturday:</span> 9:00 AM - 8:00 PM
+              <span className="font-bold">Saturday:</span> 11:00 AM - 8:00 PM
             </p>
             <p>
-              <span className="font-bold">Sunday:</span> Closed
+              <span className="font-bold">Sunday:</span>11:00 AM - 8:00 PM
             </p>
           </div>
         </div>

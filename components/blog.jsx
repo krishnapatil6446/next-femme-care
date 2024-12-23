@@ -10,7 +10,7 @@ export default function NewArrivals() {
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed">
               Unlock the secret to smoother, plumper, and more hydrated skin with 
-              hemkranti’s all new Hyaluronic Acid!
+              hemkanti’s all new Hyaluronic Acid!
             </p>
             <p className="text-gray-600 text-sm">
               The hyaluronic acid gives deep hydration, Smooth & Firm, Gentle & Effective
@@ -44,9 +44,9 @@ export default function NewArrivals() {
           {/* Right Image */}
           <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
             <img
-              src="/images/home/Gemini_Generated_Image_a09drda09drda09d-removebg-preview.jpg" // Replace with actual image URL
+              src="/images/home/Hemkanti__1_-removebg-preview.png" // Replace with actual image URL
               alt="Hyaluronic Acid"
-              className="rounded-lg shadow-md w-full max-w-sm object-cover"
+              className="rounded-lg  w-full max-w-sm object-cover"
             />
           </div>
         </div>
