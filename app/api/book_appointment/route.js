@@ -1,13 +1,9 @@
-// app/api/book_appointment/route.js
-
 import nodemailer from 'nodemailer';
 
-// Handle POST request
 export async function POST(req) {
   try {
-    const { name, email, phone, service, time } = await req.json(); // Get the request body (use req.json() in Next.js 13)
+    const { name, email, phone, service, time } = await req.json();
 
-    // Validate input fields
     if (!name || !email || !phone || !service || !time) {
       return new Response(
         JSON.stringify({ message: 'All fields are required' }),
@@ -15,61 +11,114 @@ export async function POST(req) {
       );
     }
 
-    // Create the email content
-    const userMessage = `
-      <html>
-        <body>
-          <h2>Thank you for Booking an Appointment</h2>
-          <p>Dear ${name},</p>
-          <p>Thank you for booking an appointment with us. Below are your appointment details:</p>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Service:</strong> ${service}</p>
-          <p><strong>Preferred Time:</strong> ${time}</p>
-          <p>We look forward to seeing you soon!</p>
-        </body>
-      </html>
+    const userTemplate = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #bf6159; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+        .content { background: #ffffff; padding: 30px; border: 1px solid #feede5; border-radius: 0 0 8px 8px; }
+        .appointment-details { background: #feede5; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .footer { text-align: center; padding: 20px; color: #bf6159; font-size: 14px; }
+        .important-note { background: #feede5; padding: 15px; border-radius: 8px; margin-top: 20px; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>Appointment Confirmation</h1>
+          <div>Hemkanti Clinics</div>
+        </div>
+        <div class="content">
+          <h2>Thank you for booking your appointment, ${name}!</h2>
+          <p>We're looking forward to seeing you. Here are your appointment details:</p>
+          
+          <div class="appointment-details">
+            <h3>Appointment Information</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Service:</strong> ${service}</p>
+            <p><strong>Preferred Time:</strong> ${time}</p>
+            <p><strong>Contact:</strong> ${phone}</p>
+            <p><strong>Email:</strong> ${email}</p>
+          </div>
+
+          <div class="important-note">
+            <h3>Important Notes:</h3>
+            <ul>
+              <li>Please arrive 10 minutes before your appointment time</li>
+              <li>Bring any relevant medical records or reports</li>
+              <li>For rescheduling, please call +919405631363</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer">
+          <p>Hemkanti Clinics</p>
+          <p>Off No:207, Commerce Centre, Shivar Garden Road</p>
+          <p>Pimple Saudagar, Pune, (MH), India -411017</p>
+          <p>Email: support@hemkanti.com | Phone: +919405631363</p>
+        </div>
+      </div>
+    </body>
+    </html>
     `;
 
-    const adminMessage = `
-      <html>
-        <body>
+    const adminTemplate = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #bf6159; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        .content { background: #ffffff; padding: 30px; border: 1px solid #feede5; border-radius: 0 0 8px 8px; }
+        .booking-details { background: #feede5; padding: 20px; border-radius: 8px; margin: 15px 0; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
           <h2>New Appointment Booking</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Service:</strong> ${service}</p>
-          <p><strong>Preferred Time:</strong> ${time}</p>
-        </body>
-      </html>
+        </div>
+        <div class="content">
+          <div class="booking-details">
+            <h3>Booking Details:</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Service:</strong> ${service}</p>
+            <p><strong>Preferred Time:</strong> ${time}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Email:</strong> ${email}</p>
+          </div>
+          <p>Timestamp: ${new Date().toLocaleString()}</p>
+        </div>
+      </div>
+    </body>
+    </html>
     `;
 
-    // Setup the transporter for nodemailer
     const transporter = nodemailer.createTransport({
-      host: 'smtp.hostinger.com',  // Hostinger SMTP server
-      port: 587,                   // Port for TLS (465 for SSL, or 587 for TLS)
-      secure: false,               // Use TLS (true for SSL, false for TLS)
+      host: 'smtp.hostinger.com',
+      port: 587,
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER,  // Your email address
-        pass: process.env.EMAIL_PASS,  // Your email password or App password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Send email to the user (confirmation)
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: email, // Send to the user's email
-      subject: 'Appointment Booking Confirmation',
-      html: userMessage,
+      from: 'support@hemkanti.com',
+      to: email,
+      subject: 'Your Appointment Confirmation - Hemkanti Clinics',
+      html: userTemplate,
     });
 
-    // Send email to the admin (notification)
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: 'support@hemkanti.com', // Admin email
-      subject: 'New Appointment Booking',
-      html: adminMessage,
+      from: 'support@hemkanti.com',
+      to: 'support@hemkanti.com',
+      subject: `New Appointment: ${service} - ${name}`,
+      html: adminTemplate,
     });
 
     return new Response(

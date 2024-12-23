@@ -17,7 +17,7 @@ function Home() {
       description: "Discover tailored prices and skincare treatments near you for a radiant look.",
     },
     {
-      image: "/images/home/photo2.png",
+      image: "/images/home/photo2-transformed-removebg-preview.png",
       title: "Feel Young and Refreshed",
       description: "Explore aesthetic treatments and expert tips to rejuvenate your skin.",
     },
@@ -90,7 +90,7 @@ function Home() {
                   quality={90}
                   sizes="100vw"
                   className="object-cover"
-                  onLoadingComplete={() => setIsLoading(false)}
+                 onLoad={() => setIsLoading(false)}
                   style={{
                     opacity: isLoading ? 0 : 1,
                     transition: 'opacity 0.3s ease-in-out'

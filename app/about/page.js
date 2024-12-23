@@ -7,8 +7,9 @@ import Head from 'next/head';
 const AboutUs = () => {
   const qualifications = [
     "MD in Homoeopathy",
-    "Diploma in Clinical Cosmetology",
-    "Diploma in Trichology"
+    "Post Graduate Diploma in Clinical Cosmetology",
+    "Post Graduate Diploma in Trichology",
+    "Post Graduate Diploma in Aesthetic Gynecology"
   ];
 
   const achievements = [
@@ -89,8 +90,8 @@ const AboutUs = () => {
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
             The founder of our brand, DR.AKANKSHA has dedicated her entire career to the cosmetology and healthcare industry.
-After extensive work experiences in healthcare INDUSTRY, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like gold in the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMOEOPATHIC treatments.
-HEMKANTI Clinic has patients from various cities who have embarked to have their desired treatments from our top skin specialist’s team.
+After extensive work experiences in healthcare Industry, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like gold in the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMOEOPATHIC treatments.
+HEMKANTI Clinics has patients from various cities who have embarked to have their desired treatments from our top skin specialist’s team.
 
             </p>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
@@ -117,7 +118,7 @@ HEMKANTI Clinic has patients from various cities who have embarked to have their
       <div className="relative z-10 text-center max-w-3xl mx-auto">
         <h3 className="text-2xl font-semibold text-[#BF6159] mb-4">Our Promise</h3>
         <p className="text-gray-700 text-lg leading-relaxed">
-          At Hemkanti, we're committed to helping you achieve your best skin health through 
+          At Hemkanti Clinics, we're committed to helping you achieve your best skin health through 
           a perfect blend of traditional wisdom and modern science. Every treatment is 
           personalized to your unique needs, ensuring optimal results and lasting beauty.
         </p>
