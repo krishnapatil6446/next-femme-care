@@ -27,26 +27,32 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(`Input changed - Name: ${name}, Value: ${value}`); // Log form input changes
     setForm({ ...form, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form submission started", form); // Log the form data when submitting
+
     setResponseMessage("");
 
     if (!form.name || !form.email || !form.message) {
       setResponseMessage("Please fill out all fields.");
+      console.log("Form submission failed - Missing fields");
       return;
     }
 
     if (!/^\S+@\S+\.\S+$/.test(form.email)) {
       setResponseMessage("Please enter a valid email address.");
+      console.log("Form submission failed - Invalid email");
       return;
     }
 
     setIsSubmitting(true);
 
     try {
+      console.log("Sending data to the server...");
       const res = await fetch('/api/contactus', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -56,14 +62,18 @@ const Contact = () => {
       if (res.ok) {
         setResponseMessage("Your message has been sent successfully!");
         setForm({ name: "", email: "", message: "" });
+        console.log("Message sent successfully");
       } else {
         const errorData = await res.json();
         setResponseMessage(errorData.message || "Something went wrong!");
+        console.log("Message sending failed: ", errorData.message || "Unknown error");
       }
     } catch (error) {
       setResponseMessage("An error occurred. Please try again later.");
+      console.error("Error during form submission: ", error); // Log any error during the submission
     } finally {
       setIsSubmitting(false);
+      console.log("Form submission finished");
     }
   };
 
@@ -164,7 +174,6 @@ const Contact = () => {
               </p>
               <p className="text-gray-700 text-lg font-medium mt-4">
                 <span className="font-bold text-[#BF6159]">Phone:</span> +919405631363
-
               </p>
               <p className="text-gray-700 text-lg font-medium mt-4">
                 <span className="font-bold text-[#BF6159]">Address: </span>Hemkanti Clinics
@@ -192,52 +201,33 @@ const Contact = () => {
           </div>
         </div>
 
-   
-    
         {/* FAQ Section */}
         <div className="max-w-7xl mx-auto mt-12">
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-[#6D4C41] mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border border-[#E0C9B5] rounded-lg p-4 hover:bg-[#FDE6D5] transition-all duration-300 cursor-pointer"
-                onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-              >
-                <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold">{faq.question}</h3>
-                  <span className="text-2xl text-[#8D6E63]">
-                    {openIndex === index ? "−" : "+"}
-                  </span>
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-[#6D4C41] mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-[#E0C9B5] rounded-lg p-4 hover:bg-[#FDE6D5] transition-all duration-300 cursor-pointer"
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                >
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-xl font-semibold text-[#6D4C41]">{faq.question}</h3>
+                    <span className="text-[#BF6159] font-semibold">
+                      {openIndex === index ? "−" : "+"}
+                    </span>
+                  </div>
+                  {openIndex === index && (
+                    <p className="mt-4 text-[#6D4C41]">{faq.answer}</p>
+                  )}
                 </div>
-                {openIndex === index && (
-                  <p className="mt-2 text-gray-600">{faq.answer}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-        </div>
-
-        {/* Map Section */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold text-[#BF6159] text-center mb-6">
-            Find Us Here
-          </h2>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345087897!2d144.95373531531673!3d-37.81627944202148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727b9cb2529f0!2s123%20Beauty%20Ave!5e0!3m2!1sen!2sus!4v1615162379874!5m2!1sen!2sus"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+              ))}
+            </div>
           </div>
         </div>
       </div>
