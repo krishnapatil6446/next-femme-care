@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import servicesData from '../components/services-data.json';
+import servicesData from '../app/services/services-data.json';
 
 export default function BookAppointment({ formData, handleInputChange, closeModal }) {
   const [loading, setLoading] = useState(false);
