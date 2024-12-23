@@ -52,12 +52,12 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Policies</h4>
           <ul className="space-y-2">
             <li>
-              <a href="/policies/terms" className="hover:text-white transition duration-300">
+              <a href="/terms" className="hover:text-white transition duration-300">
                 Terms and Conditions
               </a>
             </li>
             <li>
-              <a href="/policies/privacy" className="hover:text-white transition duration-300">
+              <a href="/privacy" className="hover:text-white transition duration-300">
                 Privacy Policy
               </a>
             </li>
@@ -113,11 +113,11 @@ export default function Footer() {
       <div className="border-t border-gray-700 mt-10 pt-5 text-center text-sm">
         <p>&copy; {new Date().getFullYear()} Made with ❤️ by Markyway</p>
         <p className="mt-2">
-          <a href="/policies/terms" className="hover:text-white transition duration-300">
+          <a href="/terms" className="hover:text-white transition duration-300">
             Terms and Conditions
           </a>{" "}
           |{" "}
-          <a href="/policies/privacy" className="hover:text-white transition duration-300">
+          <a href="/privacy" className="hover:text-white transition duration-300">
             Privacy Policy
           </a>{" "}
           {/* <a href="/policies/refund-policy" className="hover:text-white transition duration-300">
