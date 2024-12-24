@@ -2,101 +2,92 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req) {
   try {
-    const { name, email, phone, service, time } = await req.json();
+    // Capture and log the raw request body for debugging
+    const rawBody = await req.text();
+    console.log('Raw Request Body:', rawBody);
 
+    // Parse the request body
+    const { name, email, phone, service, time } = JSON.parse(rawBody);
+
+    // Validate required fields
     if (!name || !email || !phone || !service || !time) {
       return new Response(
         JSON.stringify({ message: 'All fields are required' }),
-        { status: 400 }
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
+    // Email templates
     const userTemplate = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: #bf6159; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
-        .content { background: #ffffff; padding: 30px; border: 1px solid #feede5; border-radius: 0 0 8px 8px; }
-        .appointment-details { background: #feede5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .footer { text-align: center; padding: 20px; color: #bf6159; font-size: 14px; }
-        .important-note { background: #feede5; padding: 15px; border-radius: 8px; margin-top: 20px; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="header">
-          <h1>Appointment Confirmation</h1>
-          <div>Hemkanti Clinics</div>
-        </div>
-        <div class="content">
-          <h2>Thank you for booking your appointment, ${name}!</h2>
-          <p>We're looking forward to seeing you. Here are your appointment details:</p>
-          
-          <div class="appointment-details">
-            <h3>Appointment Information</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Service:</strong> ${service}</p>
-            <p><strong>Preferred Time:</strong> ${time}</p>
-            <p><strong>Contact:</strong> ${phone}</p>
-            <p><strong>Email:</strong> ${email}</p>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background-color: #bf6159; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+          .content { padding: 20px; background-color: #fff; border: 1px solid #feede5; border-radius: 0 0 8px 8px; }
+          .appointment-details { background-color: #feede5; padding: 15px; margin: 20px 0; border-radius: 8px; }
+          .footer { text-align: center; padding: 15px; font-size: 12px; color: #bf6159; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>Appointment Confirmation</h1>
           </div>
-
-          <div class="important-note">
-            <h3>Important Notes:</h3>
-            <ul>
-              <li>Please arrive 10 minutes before your appointment time</li>
-              <li>Bring any relevant medical records or reports</li>
-              <li>For rescheduling, please call +919405631363</li>
-            </ul>
+          <div class="content">
+            <p>Dear ${name},</p>
+            <p>Thank you for booking your appointment. Here are your details:</p>
+            <div class="appointment-details">
+              <p><strong>Service:</strong> ${service}</p>
+              <p><strong>Preferred Time:</strong> ${time}</p>
+              <p><strong>Phone:</strong> ${phone}</p>
+              <p><strong>Email:</strong> ${email}</p>
+            </div>
+            <p>Please arrive 10 minutes early and call us at +919405631363 for rescheduling.</p>
+          </div>
+          <div class="footer">
+            <p>Hemkanti Clinics, Pimple Saudagar, Pune</p>
+            <p>Phone: +919405631363 | Email: support@hemkanti.com</p>
           </div>
         </div>
-        <div class="footer">
-          <p>Hemkanti Clinics</p>
-          <p>Off No:207, Commerce Centre, Shivar Garden Road</p>
-          <p>Pimple Saudagar, Pune, (MH), India -411017</p>
-          <p>Email: support@hemkanti.com | Phone: +919405631363</p>
-        </div>
-      </div>
-    </body>
-    </html>
+      </body>
+      </html>
     `;
 
     const adminTemplate = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: #bf6159; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-        .content { background: #ffffff; padding: 30px; border: 1px solid #feede5; border-radius: 0 0 8px 8px; }
-        .booking-details { background: #feede5; padding: 20px; border-radius: 8px; margin: 15px 0; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="header">
-          <h2>New Appointment Booking</h2>
-        </div>
-        <div class="content">
-          <div class="booking-details">
-            <h3>Booking Details:</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Service:</strong> ${service}</p>
-            <p><strong>Preferred Time:</strong> ${time}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-            <p><strong>Email:</strong> ${email}</p>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background-color: #bf6159; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+          .content { padding: 20px; background-color: #fff; border: 1px solid #feede5; border-radius: 0 0 8px 8px; }
+          .details { background-color: #feede5; padding: 15px; margin: 20px 0; border-radius: 8px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h2>New Appointment</h2>
           </div>
-          <p>Timestamp: ${new Date().toLocaleString()}</p>
+          <div class="content">
+            <div class="details">
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Service:</strong> ${service}</p>
+              <p><strong>Preferred Time:</strong> ${time}</p>
+              <p><strong>Phone:</strong> ${phone}</p>
+              <p><strong>Email:</strong> ${email}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </body>
-    </html>
+      </body>
+      </html>
     `;
 
+    // Nodemailer configuration
     const transporter = nodemailer.createTransport({
       host: 'smtp.hostinger.com',
       port: 587,
@@ -107,29 +98,34 @@ export async function POST(req) {
       },
     });
 
+    // Send email to the user
     await transporter.sendMail({
       from: 'support@hemkanti.com',
       to: email,
-      subject: 'Your Appointment Confirmation - Hemkanti Clinics',
+      subject: 'Appointment Confirmation - Hemkanti Clinics',
       html: userTemplate,
     });
 
+    // Send email to the admin
     await transporter.sendMail({
       from: 'support@hemkanti.com',
       to: 'support@hemkanti.com',
-      subject: `New Appointment: ${service} - ${name}`,
+      subject: `New Appointment - ${service}`,
       html: adminTemplate,
     });
 
+    // Success response
     return new Response(
       JSON.stringify({ success: true, message: 'Appointment booked successfully!' }),
-      { status: 200 }
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
-    console.error('Error sending email:', error.message);
+    console.error('Error:', error.message);
+
+    // Error response
     return new Response(
-      JSON.stringify({ success: false, message: 'Failed to send email. Please try again.' }),
-      { status: 500 }
+      JSON.stringify({ success: false, message: 'An error occurred during submission. Please try again.' }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
 }
