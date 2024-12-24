@@ -11,8 +11,8 @@ export default function About() {
     <Image
       src="/images/home/about.jpg"
       alt="Hemkanti Clinic"
-      layout="fill"
-      objectFit="cover"
+      fill
+      style={{ objectFit: 'cover' }} loading="eager"
       className="rounded-xl"
       title="Hemkanti Clinic"
     />

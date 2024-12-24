@@ -8,8 +8,8 @@ const ProductCard = ({ name, description, image }) => {
         <Image
           src={image}
           alt={name}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }} loading="eager"
           className="rounded-t-xl"
         />
       </div>

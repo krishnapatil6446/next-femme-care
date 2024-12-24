@@ -58,8 +58,8 @@ export default function Services() {
                 <Image
                   src={service.image}
                   alt={service.title}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: 'cover' }} loading="eager"
                   className="rounded-2xl"
                 />
               </div>

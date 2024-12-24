@@ -7,8 +7,8 @@ const ServiceCard = ({ title, description, image }) => {
         <Image
           src={image}
           alt={title}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }} loading="eager"
           className="rounded-full border-4 border-[#BF6159]"
         />
       </div>

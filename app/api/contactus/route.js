@@ -8,9 +8,10 @@ export async function POST(request) {
     port: 587,
     secure: false,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: 'support@hemkanti.com',
+      pass: 'Hemmail@321',
     },
+    
   });
 
   const userTemplate = `
